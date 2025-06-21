@@ -52,7 +52,7 @@ const Index = () => {
       rating: 4.8,
       pricing: "Free + Premium",
       website: "https://chat.openai.com",
-      logo: "🤖",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
       tags: ["Popular", "Versatile"]
     },
     {
@@ -64,7 +64,7 @@ const Index = () => {
       rating: 4.7,
       pricing: "Free + Pro",
       website: "https://claude.ai",
-      logo: "🎭",
+      logo: "https://claude.ai/images/claude_app_icon.png",
       tags: ["Ethical", "Research"]
     },
     {
@@ -76,7 +76,7 @@ const Index = () => {
       rating: 4.9,
       pricing: "Subscription",
       website: "https://midjourney.com",
-      logo: "🎨",
+      logo: "https://seeklogo.com/images/M/midjourney-logo-BEA2B55771-seeklogo.com.png",
       tags: ["Art", "Visual"]
     },
     {
@@ -88,7 +88,7 @@ const Index = () => {
       rating: 4.6,
       pricing: "$10/month",
       website: "https://github.com/features/copilot",
-      logo: "💻",
+      logo: "https://github.githubassets.com/images/modules/site/copilot/copilot.png",
       tags: ["Developer", "Productivity"]
     },
     {
@@ -100,7 +100,7 @@ const Index = () => {
       rating: 4.5,
       pricing: "From $39/month",
       website: "https://jasper.ai",
-      logo: "✨",
+      logo: "https://www.jasper.ai/wp-content/uploads/2022/01/jasper-logo.svg",
       tags: ["Marketing", "Content"]
     },
     {
@@ -112,7 +112,7 @@ const Index = () => {
       rating: 4.4,
       pricing: "$8/month",
       website: "https://notion.so/ai",
-      logo: "📝",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
       tags: ["Productivity", "Organization"]
     },
     {
@@ -124,7 +124,7 @@ const Index = () => {
       rating: 4.7,
       pricing: "Credits-based",
       website: "https://openai.com/dall-e-3",
-      logo: "🖼️",
+      logo: "https://openai.com/content/images/2022/05/openai-avatar.png",
       tags: ["OpenAI", "Images"]
     },
     {
@@ -136,8 +136,104 @@ const Index = () => {
       rating: 4.8,
       pricing: "Free + Pro",
       website: "https://cursor.sh",
-      logo: "🔮",
+      logo: "https://cursor.sh/brand/icon.svg",
       tags: ["Editor", "AI-first"]
+    },
+    {
+      id: 9,
+      name: "Perplexity AI",
+      category: "chat",
+      description: "AI-powered search engine that provides accurate answers with source citations",
+      features: ["Real-time search", "Source citations", "Academic research", "Fact checking"],
+      rating: 4.6,
+      pricing: "Free + Pro",
+      website: "https://perplexity.ai",
+      logo: "https://yt3.googleusercontent.com/0hkjJOzQl3-oka4wuKwt9Qc2vYK7DZvGPxEQe9K3QwjXdCkiU7GV2-qzD6iMZrR1CbKWC-N9=s900-c-k-c0x00ffffff-no-rj",
+      tags: ["Search", "Research"]
+    },
+    {
+      id: 10,
+      name: "Runway ML",
+      category: "creative",
+      description: "AI-powered creative tools for video generation, editing, and visual effects",
+      features: ["Video generation", "AI editing", "Motion graphics", "Visual effects"],
+      rating: 4.5,
+      pricing: "Free + Subscription",
+      website: "https://runwayml.com",
+      logo: "https://research.runwayml.com/the-runway-logo.svg",
+      tags: ["Video", "Creative"]
+    },
+    {
+      id: 11,
+      name: "Copy.ai",
+      category: "business",
+      description: "AI copywriting assistant for marketing content, emails, and social media",
+      features: ["Marketing copy", "Email templates", "Social posts", "Blog content"],
+      rating: 4.3,
+      pricing: "Free + Pro",
+      website: "https://copy.ai",
+      logo: "https://cdn.prod.website-files.com/628288c5cd3e8411283ac7a1/62d0efabe1a0156a5f41325b_copy-ai-logo-400x400.png",
+      tags: ["Copywriting", "Marketing"]
+    },
+    {
+      id: 12,
+      name: "Stable Diffusion",
+      category: "creative",
+      description: "Open-source AI image generator with powerful customization options",
+      features: ["Image generation", "Model training", "Open source", "Customizable"],
+      rating: 4.4,
+      pricing: "Free + Hosting costs",
+      website: "https://stability.ai/stable-diffusion",
+      logo: "https://avatars.githubusercontent.com/u/99575780?s=200&v=4",
+      tags: ["Open Source", "Customizable"]
+    },
+    {
+      id: 13,
+      name: "Grammarly",
+      category: "business",
+      description: "AI-powered writing assistant for grammar, style, and tone improvement",
+      features: ["Grammar check", "Style suggestions", "Tone detection", "Plagiarism check"],
+      rating: 4.5,
+      pricing: "Free + Premium",
+      website: "https://grammarly.com",
+      logo: "https://static.grammarly.com/assets/files/9a25b0d7ce2c47aabfe6b8c3d5d86e8c/grammarly_icon_256x256.png",
+      tags: ["Writing", "Productivity"]
+    },
+    {
+      id: 14,
+      name: "Luma AI",
+      category: "creative",
+      description: "AI-powered 3D capture and neural rendering for immersive content creation",
+      features: ["3D scanning", "Neural rendering", "AR/VR content", "Photogrammetry"],
+      rating: 4.2,
+      pricing: "Free + Pro",
+      website: "https://lumalabs.ai",
+      logo: "https://lumalabs.ai/favicon.ico",
+      tags: ["3D", "AR/VR"]
+    },
+    {
+      id: 15,
+      name: "Synthesia",
+      category: "creative",
+      description: "AI video generation platform for creating professional videos with AI avatars",
+      features: ["AI avatars", "Video generation", "Multi-language", "Professional quality"],
+      rating: 4.3,
+      pricing: "Subscription",
+      website: "https://synthesia.io",
+      logo: "https://www.synthesia.io/hubfs/synthesia-logo.svg",
+      tags: ["Video", "Avatars"]
+    },
+    {
+      id: 16,
+      name: "Character.AI",
+      category: "chat",
+      description: "Platform for creating and chatting with AI characters with distinct personalities",
+      features: ["Character creation", "Personality simulation", "Creative roleplay", "Community"],
+      rating: 4.1,
+      pricing: "Free + Plus",
+      website: "https://character.ai",
+      logo: "https://characterai.io/favicon.ico",
+      tags: ["Entertainment", "Roleplay"]
     }
   ];
 
@@ -267,8 +363,17 @@ const Index = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardHeader className="text-center pb-4">
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {agent.logo}
+                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                    <img 
+                      src={agent.logo} 
+                      alt={`${agent.name} logo`}
+                      className="w-12 h-12 object-contain"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling!.style.display = 'block';
+                      }}
+                    />
+                    <div className="text-4xl hidden">{agent.name.charAt(0)}</div>
                   </div>
                   <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
                     {agent.name}
