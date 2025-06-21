@@ -1,11 +1,11 @@
-
 import { useState } from "react";
-import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users } from "lucide-react";
+import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Scene } from "@/components/ui/hero-section";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,6 +17,29 @@ const Index = () => {
     { id: "creative", name: "Creative", icon: Image },
     { id: "coding", name: "Coding", icon: Code },
     { id: "business", name: "Business", icon: Users },
+  ];
+
+  const features = [
+    {
+      icon: Cpu,
+      title: "Performance",
+      description: "Ultra-fast AI processing for every task.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Security",
+      description: "Trusted AI agents with verified safety.",
+    },
+    {
+      icon: Layers,
+      title: "Integration",
+      description: "Seamless workflow integration capabilities.",
+    },
+    {
+      icon: Zap,
+      title: "Speed",
+      description: "Instant responses and real-time results.",
+    },
   ];
 
   const aiAgents = [
@@ -154,51 +177,77 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 px-4">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10" />
-        <div className="relative max-w-7xl mx-auto text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8">
-              AI Agent Hub
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
-              Discover, compare, and choose the perfect AI agents for your specific needs. 
-              From creative tools to coding assistants, find your ideal AI companion.
-            </p>
-          </div>
-          
-          {/* Search Bar */}
-          <div className="max-w-2xl mx-auto mb-12 animate-fade-in">
-            <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <Input
-                type="text"
-                placeholder="Search AI agents..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 pr-4 py-4 text-lg rounded-full border-2 border-gray-200 focus:border-blue-500 transition-all duration-300 shadow-lg"
-              />
+      {/* New 3D Hero Section */}
+      <section className="min-h-screen w-full bg-gradient-to-br from-black to-[#1A2428] text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
+        <div className="w-full max-w-6xl space-y-12 relative z-10">
+          <div className="flex flex-col items-center text-center space-y-8">
+            <Badge variant="secondary" className="backdrop-blur-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 px-4 py-2 rounded-full">
+              ✨ Next Generation AI Tools
+            </Badge>
+            
+            <div className="space-y-6 flex items-center justify-center flex-col">
+              <h1 className="text-3xl md:text-6xl font-semibold tracking-tight max-w-3xl">
+                Discover, compare, and choose the perfect AI agents
+              </h1>
+              <p className="text-lg text-neutral-300 max-w-2xl">
+                From creative tools to coding assistants, find your ideal AI companion. Experience ultra-fast processing, advanced security, and intuitive design.
+              </p>
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto mb-8">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <Input
+                    type="text"
+                    placeholder="Search AI agents..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-12 pr-4 py-4 text-lg rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder:text-gray-400 focus:border-white/40 transition-all duration-300"
+                  />
+                </div>
+              </div>
+
+              {/* Category Filter */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                {categories.map((category) => {
+                  const IconComponent = category.icon;
+                  return (
+                    <Button
+                      key={category.id}
+                      variant={selectedCategory === category.id ? "default" : "outline"}
+                      onClick={() => setSelectedCategory(category.id)}
+                      className={`rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 ${
+                        selectedCategory === category.id 
+                          ? "bg-white text-black hover:bg-white/90" 
+                          : "bg-transparent text-white border-white/20 hover:bg-white/10"
+                      }`}
+                    >
+                      <IconComponent className="h-4 w-4 mr-2" />
+                      {category.name}
+                    </Button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in">
-            {categories.map((category) => {
-              const IconComponent = category.icon;
-              return (
-                <Button
-                  key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className="rounded-full px-6 py-3 transition-all duration-300 hover:scale-105"
-                >
-                  <IconComponent className="h-4 w-4 mr-2" />
-                  {category.name}
-                </Button>
-              );
-            })}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+            {features.map((feature, idx) => (
+              <div
+                key={idx}
+                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-6 h-40 md:h-48 flex flex-col justify-start items-start space-y-2 md:space-y-3"
+              >
+                <feature.icon size={18} className="text-white/80 md:w-5 md:h-5" />
+                <h3 className="text-sm md:text-base font-medium">{feature.title}</h3>
+                <p className="text-xs md:text-sm text-neutral-400">{feature.description}</p>
+              </div>
+            ))}
           </div>
+        </div>
+        
+        {/* 3D Background Scene */}
+        <div className="absolute inset-0">
+          <Scene />
         </div>
       </section>
 
