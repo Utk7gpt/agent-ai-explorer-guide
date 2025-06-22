@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers } from "lucide-react";
+import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Switch } from "@/components/ui/switch";
 import { Scene } from "@/components/ui/hero-section";
+import { BeamsBackground } from "@/components/ui/beams-background";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const categories = [
     { id: "all", name: "All Agents", icon: Brain },
@@ -347,19 +350,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI Agents Grid */}
-      <section className="py-16 px-4">
+      {/* AI Agents Grid with Beams Background */}
+      <BeamsBackground 
+        isDark={isDarkMode}
+        className="py-16 px-4"
+        intensity="medium"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured AI Agents</h2>
-            <p className="text-xl text-gray-600">Explore the most powerful AI tools available today</p>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+                Featured AI Agents
+              </h2>
+              <div className="flex items-center gap-2">
+                <Sun className={`h-4 w-4 ${isDarkMode ? 'text-gray-400' : 'text-yellow-500'}`} />
+                <Switch
+                  checked={isDarkMode}
+                  onCheckedChange={setIsDarkMode}
+                />
+                <Moon className={`h-4 w-4 ${isDarkMode ? 'text-blue-400' : 'text-gray-400'}`} />
+              </div>
+            </div>
+            <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              Explore the most powerful AI tools available today
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredAgents.map((agent, index) => (
               <Card 
                 key={agent.id} 
-                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white/80 backdrop-blur-sm animate-fade-in"
+                className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 animate-fade-in ${
+                  isDarkMode 
+                    ? 'bg-white/10 backdrop-blur-sm text-white border-white/20' 
+                    : 'bg-white/80 backdrop-blur-sm text-gray-800'
+                }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardHeader className="text-center pb-4">
@@ -369,13 +394,19 @@ const Index = () => {
                       alt={`${agent.name} logo`}
                       className="w-12 h-12 object-contain"
                       onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling!.style.display = 'block';
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.style.display = 'none';
+                        const nextSibling = target.nextElementSibling as HTMLDivElement;
+                        if (nextSibling) {
+                          nextSibling.style.display = 'block';
+                        }
                       }}
                     />
                     <div className="text-4xl hidden">{agent.name.charAt(0)}</div>
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+                  <CardTitle className={`text-xl font-bold group-hover:text-blue-400 transition-colors ${
+                    isDarkMode ? 'text-white' : 'text-gray-800'
+                  }`}>
                     {agent.name}
                   </CardTitle>
                   <div className="flex items-center justify-center gap-2 mb-2">
@@ -384,25 +415,31 @@ const Index = () => {
                       <span className="text-sm font-medium ml-1">{agent.rating}</span>
                     </div>
                     <span className="text-sm text-gray-500">•</span>
-                    <span className="text-sm font-medium text-green-600">{agent.pricing}</span>
+                    <span className="text-sm font-medium text-green-400">{agent.pricing}</span>
                   </div>
                   <div className="flex flex-wrap justify-center gap-1 mb-3">
                     {agent.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
+                      <Badge key={tag} variant="secondary" className={`text-xs ${
+                        isDarkMode ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
+                      }`}>
                         {tag}
                       </Badge>
                     ))}
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-center mb-4 text-gray-600 leading-relaxed">
+                  <CardDescription className={`text-center mb-4 leading-relaxed ${
+                    isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     {agent.description}
                   </CardDescription>
                   
                   <div className="space-y-2 mb-6">
                     {agent.features.slice(0, 3).map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-600">
-                        <Zap className="h-3 w-3 text-blue-500 mr-2 flex-shrink-0" />
+                      <div key={idx} className={`flex items-center text-sm ${
+                        isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                      }`}>
+                        <Zap className="h-3 w-3 text-blue-400 mr-2 flex-shrink-0" />
                         {feature}
                       </div>
                     ))}
@@ -410,7 +447,12 @@ const Index = () => {
 
                   <Button 
                     asChild 
-                    className="w-full group-hover:bg-blue-600 transition-colors duration-300"
+                    className={`w-full transition-colors duration-300 ${
+                      isDarkMode 
+                        ? 'bg-white/20 text-white hover:bg-white/30 border border-white/30' 
+                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                    }`}
+                    variant={isDarkMode ? "outline" : "default"}
                   >
                     <a href={agent.website} target="_blank" rel="noopener noreferrer">
                       Visit Website
@@ -425,12 +467,16 @@ const Index = () => {
           {filteredAgents.length === 0 && (
             <div className="text-center py-16">
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">No agents found</h3>
-              <p className="text-gray-600">Try adjusting your search or category filter</p>
+              <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+                No agents found
+              </h3>
+              <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+                Try adjusting your search or category filter
+              </p>
             </div>
           )}
         </div>
-      </section>
+      </BeamsBackground>
 
       {/* Coming Soon Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-indigo-50 to-purple-50">
