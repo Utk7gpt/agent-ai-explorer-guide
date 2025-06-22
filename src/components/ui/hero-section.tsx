@@ -33,11 +33,9 @@ const Box = ({ position, rotation }: { position: [number, number, number], rotat
             rotation={rotation}
         >
             <meshPhysicalMaterial 
-                args={[{
-                    color: "#232323",
-                    metalness: 1,
-                    roughness: 0.3
-                }]}
+                color="#232323"
+                metalness={1}
+                roughness={0.3}
             />
         </mesh>
     );

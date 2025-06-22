@@ -1,9 +1,11 @@
 
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Circle } from "lucide-react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+
 
 function ElegantShape({
     className,
@@ -35,7 +37,7 @@ function ElegantShape({
             transition={{
                 duration: 2.4,
                 delay,
-                ease: [0.23, 0.86, 0.39, 0.96] as any,
+                ease: [0.23, 0.86, 0.39, 0.96],
                 opacity: { duration: 1.2 },
             }}
             className={cn("absolute", className)}
@@ -84,15 +86,15 @@ function HeroGeometric({
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: {
+        visible: (i: number) => ({
             opacity: 1,
             y: 0,
             transition: {
                 duration: 1,
-                delay: 0.5,
-                ease: [0.25, 0.4, 0.25, 1] as any,
+                delay: 0.5 + i * 0.2,
+                ease: [0.25, 0.4, 0.25, 1],
             },
-        },
+        }),
     };
 
     return (
@@ -151,6 +153,7 @@ function HeroGeometric({
                     <div className="container mx-auto px-4 md:px-6">
                         <div className="max-w-3xl mx-auto text-center">
                             <motion.div
+                                custom={0}
                                 variants={fadeUpVariants}
                                 initial="hidden"
                                 animate="visible"
@@ -163,16 +166,8 @@ function HeroGeometric({
                             </motion.div>
 
                             <motion.div
-                                variants={{
-                                    ...fadeUpVariants,
-                                    visible: {
-                                        ...fadeUpVariants.visible,
-                                        transition: {
-                                            ...fadeUpVariants.visible.transition,
-                                            delay: 0.7,
-                                        },
-                                    },
-                                }}
+                                custom={1}
+                                variants={fadeUpVariants}
                                 initial="hidden"
                                 animate="visible"
                             >
@@ -192,16 +187,8 @@ function HeroGeometric({
                             </motion.div>
 
                             <motion.div
-                                variants={{
-                                    ...fadeUpVariants,
-                                    visible: {
-                                        ...fadeUpVariants.visible,
-                                        transition: {
-                                            ...fadeUpVariants.visible.transition,
-                                            delay: 0.9,
-                                        },
-                                    },
-                                }}
+                                custom={2}
+                                variants={fadeUpVariants}
                                 initial="hidden"
                                 animate="visible"
                             >

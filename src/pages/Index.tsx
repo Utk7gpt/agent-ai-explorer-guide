@@ -8,7 +8,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Scene } from "@/components/ui/hero-section";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -517,72 +516,22 @@ const Index = () => {
         </div>
       </HeroGeometric>
 
-      {/* Footer with Sparkles Background */}
-      <footer className="relative min-h-[400px] bg-black overflow-hidden">
-        <div className="absolute inset-0">
-          <SparklesCore
-            id="footerSparkles"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={80}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-            speed={0.8}
-          />
-        </div>
-        
-        <div className="relative z-10 py-16 px-4">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <h3 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-                AI Agent Hub
-              </h3>
-              <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
-                Your gateway to discovering the most powerful AI tools and agents. 
-                Experience the future of artificial intelligence today.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-white">Explore</h4>
-                <div className="space-y-2">
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Browse Agents</a>
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Categories</a>
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Featured</a>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-white">Community</h4>
-                <div className="space-y-2">
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Submit Agent</a>
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Reviews</a>
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Discord</a>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-white">Support</h4>
-                <div className="space-y-2">
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">About</a>
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Contact</a>
-                  <a href="#" className="block text-white/60 hover:text-white transition-colors">Help</a>
-                </div>
-              </div>
-            </div>
-            
-            <div className="border-t border-white/10 pt-8">
-              <p className="text-white/40 text-sm">
-                © 2024 AI Agent Hub. Connecting you with the future of AI. Built with ❤️ for the AI community.
-              </p>
-            </div>
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h3 className="text-2xl font-bold mb-4">AI Agent Hub</h3>
+          <p className="text-gray-400 mb-6">
+            Your gateway to discovering the most powerful AI tools and agents
+          </p>
+          <div className="flex justify-center space-x-6">
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">About</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Submit Agent</a>
           </div>
+          <p className="text-gray-500 text-sm mt-6">
+            © 2024 AI Agent Hub. Connecting you with the future of AI.
+          </p>
         </div>
-        
-        {/* Gradient overlay to blend with content above */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none" />
       </footer>
     </div>
   );
