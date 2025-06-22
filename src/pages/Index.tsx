@@ -350,13 +350,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI Agents Grid with Beams Background */}
+      {/* AI Agents Grid and Coming Soon Section with Beams Background */}
       <BeamsBackground 
         isDark={isDarkMode}
         className="py-16 px-4"
         intensity="medium"
       >
         <div className="max-w-7xl mx-auto">
+          {/* Featured AI Agents Section */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-6">
               <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
@@ -376,7 +377,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
             {filteredAgents.map((agent, index) => (
               <Card 
                 key={agent.id} 
@@ -475,33 +476,41 @@ const Index = () => {
               </p>
             </div>
           )}
-        </div>
-      </BeamsBackground>
 
-      {/* Coming Soon Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-indigo-50 to-purple-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Coming Soon</h2>
-            <p className="text-xl text-gray-600">Next generation AI agents on the horizon</p>
+          {/* Coming Soon Section */}
+          <div className="text-center mb-12 mt-20">
+            <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+              Coming Soon
+            </h2>
+            <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              Next generation AI agents on the horizon
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {comingSoonAgents.map((agent, index) => (
               <Card 
                 key={agent.name} 
-                className="text-center hover:shadow-xl transition-all duration-300 border-dashed border-2 border-gray-300 bg-white/50 backdrop-blur-sm animate-fade-in"
+                className={`text-center hover:shadow-xl transition-all duration-300 border-dashed border-2 animate-fade-in ${
+                  isDarkMode 
+                    ? 'border-white/30 bg-white/10 backdrop-blur-sm text-white' 
+                    : 'border-gray-300 bg-white/50 backdrop-blur-sm text-gray-800'
+                }`}
                 style={{ animationDelay: `${index * 150}ms` }}
               >
                 <CardHeader>
                   <div className="text-3xl mb-3">🚀</div>
-                  <CardTitle className="text-lg font-bold text-gray-800">{agent.name}</CardTitle>
-                  <Badge variant="outline" className="mx-auto">
+                  <CardTitle className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+                    {agent.name}
+                  </CardTitle>
+                  <Badge variant="outline" className={`mx-auto ${
+                    isDarkMode ? 'border-white/30 text-white' : 'border-gray-300 text-gray-600'
+                  }`}>
                     {agent.expectedLaunch}
                   </Badge>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600">
+                  <CardDescription className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
                     {agent.description}
                   </CardDescription>
                 </CardContent>
@@ -509,7 +518,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+      </BeamsBackground>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">

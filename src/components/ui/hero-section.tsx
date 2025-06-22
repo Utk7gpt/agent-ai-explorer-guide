@@ -37,28 +37,6 @@ const Box = ({ position, rotation }: { position: [number, number, number], rotat
                 metalness={1}
                 roughness={0.3}
                 reflectivity={0.5}
-                ior={1.5}
-                emissive="#000000"
-                emissiveIntensity={0}
-                transparent={false}
-                opacity={1.0}
-                transmission={0.0}
-                thickness={0.5}
-                clearcoat={0.0}
-                clearcoatRoughness={0.0}
-                sheen={0}
-                sheenRoughness={1.0}
-                sheenColor="#ffffff"
-                specularIntensity={1.0}
-                specularColor="#ffffff"
-                iridescence={1}
-                iridescenceIOR={1.3}
-                iridescenceThicknessRange={[100, 400]}
-                flatShading={false}
-                side={THREE.FrontSide}
-                alphaTest={0}
-                depthWrite={true}
-                depthTest={true}
             />
         </mesh>
     );
