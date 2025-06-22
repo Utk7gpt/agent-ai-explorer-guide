@@ -6,7 +6,6 @@ import { Circle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-
 function ElegantShape({
     className,
     delay = 0,
@@ -48,7 +47,7 @@ function ElegantShape({
                 }}
                 transition={{
                     duration: 12,
-                    repeat: Number.POSITIVE_INFINITY,
+                    repeat: Infinity,
                     ease: "easeInOut",
                 }}
                 style={{
@@ -86,15 +85,15 @@ function HeroGeometric({
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: (i: number) => ({
+        visible: {
             opacity: 1,
             y: 0,
             transition: {
                 duration: 1,
-                delay: 0.5 + i * 0.2,
+                delay: 0.5,
                 ease: [0.25, 0.4, 0.25, 1],
             },
-        }),
+        },
     };
 
     return (
@@ -170,6 +169,7 @@ function HeroGeometric({
                                 variants={fadeUpVariants}
                                 initial="hidden"
                                 animate="visible"
+                                transition={{ delay: 0.7 }}
                             >
                                 <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
                                     <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
@@ -191,6 +191,7 @@ function HeroGeometric({
                                 variants={fadeUpVariants}
                                 initial="hidden"
                                 animate="visible"
+                                transition={{ delay: 0.9 }}
                             >
                                 <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
                                     Crafting exceptional digital experiences through
