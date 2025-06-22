@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Scene } from "@/components/ui/hero-section";
-import { BeamsBackground } from "@/components/ui/beams-background";
+import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -350,175 +350,171 @@ const Index = () => {
         </div>
       </section>
 
-      {/* AI Agents Grid and Coming Soon Section with Beams Background */}
-      <BeamsBackground 
-        isDark={isDarkMode}
-        className="py-16 px-4"
-        intensity="medium"
+      {/* AI Agents Grid and Coming Soon Section with HeroGeometric Background */}
+      <HeroGeometric
+        badge="✨ Featured AI Agents"
+        title1="Discover the most"
+        title2="powerful AI tools"
       >
-        <div className="max-w-7xl mx-auto">
-          {/* Featured AI Agents Section */}
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-                Featured AI Agents
-              </h2>
-              <div className="flex items-center gap-2">
-                <Sun className={`h-4 w-4 ${isDarkMode ? 'text-gray-400' : 'text-yellow-500'}`} />
-                <Switch
-                  checked={isDarkMode}
-                  onCheckedChange={setIsDarkMode}
-                />
-                <Moon className={`h-4 w-4 ${isDarkMode ? 'text-blue-400' : 'text-gray-400'}`} />
+        <div className="py-16 px-4 w-full">
+          <div className="max-w-7xl mx-auto">
+            {/* Featured AI Agents Section */}
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <h2 className="text-4xl font-bold mb-4 text-white">
+                  Featured AI Agents
+                </h2>
+                <div className="flex items-center gap-2">
+                  <Sun className={`h-4 w-4 ${isDarkMode ? 'text-gray-400' : 'text-yellow-500'}`} />
+                  <Switch
+                    checked={isDarkMode}
+                    onCheckedChange={setIsDarkMode}
+                  />
+                  <Moon className={`h-4 w-4 ${isDarkMode ? 'text-blue-400' : 'text-gray-400'}`} />
+                </div>
               </div>
-            </div>
-            <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Explore the most powerful AI tools available today
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
-            {filteredAgents.map((agent, index) => (
-              <Card 
-                key={agent.id} 
-                className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 animate-fade-in ${
-                  isDarkMode 
-                    ? 'bg-white/10 backdrop-blur-sm text-white border-white/20' 
-                    : 'bg-white/80 backdrop-blur-sm text-gray-800'
-                }`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <CardHeader className="text-center pb-4">
-                  <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                    <img 
-                      src={agent.logo} 
-                      alt={`${agent.name} logo`}
-                      className="w-12 h-12 object-contain"
-                      onError={(e) => {
-                        const target = e.currentTarget as HTMLImageElement;
-                        target.style.display = 'none';
-                        const nextSibling = target.nextElementSibling as HTMLDivElement;
-                        if (nextSibling) {
-                          nextSibling.style.display = 'block';
-                        }
-                      }}
-                    />
-                    <div className="text-4xl hidden">{agent.name.charAt(0)}</div>
-                  </div>
-                  <CardTitle className={`text-xl font-bold group-hover:text-blue-400 transition-colors ${
-                    isDarkMode ? 'text-white' : 'text-gray-800'
-                  }`}>
-                    {agent.name}
-                  </CardTitle>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <div className="flex items-center">
-                      <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                      <span className="text-sm font-medium ml-1">{agent.rating}</span>
-                    </div>
-                    <span className="text-sm text-gray-500">•</span>
-                    <span className="text-sm font-medium text-green-400">{agent.pricing}</span>
-                  </div>
-                  <div className="flex flex-wrap justify-center gap-1 mb-3">
-                    {agent.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className={`text-xs ${
-                        isDarkMode ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
-                      }`}>
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className={`text-center mb-4 leading-relaxed ${
-                    isDarkMode ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
-                    {agent.description}
-                  </CardDescription>
-                  
-                  <div className="space-y-2 mb-6">
-                    {agent.features.slice(0, 3).map((feature, idx) => (
-                      <div key={idx} className={`flex items-center text-sm ${
-                        isDarkMode ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        <Zap className="h-3 w-3 text-blue-400 mr-2 flex-shrink-0" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-
-                  <Button 
-                    asChild 
-                    className={`w-full transition-colors duration-300 ${
-                      isDarkMode 
-                        ? 'bg-white/20 text-white hover:bg-white/30 border border-white/30' 
-                        : 'bg-blue-600 text-white hover:bg-blue-700'
-                    }`}
-                    variant={isDarkMode ? "outline" : "default"}
-                  >
-                    <a href={agent.website} target="_blank" rel="noopener noreferrer">
-                      Visit Website
-                      <ExternalLink className="h-4 w-4 ml-2" />
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {filteredAgents.length === 0 && (
-            <div className="text-center py-16">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className={`text-2xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-                No agents found
-              </h3>
-              <p className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
-                Try adjusting your search or category filter
+              <p className="text-xl text-white/70">
+                Explore the most powerful AI tools available today
               </p>
             </div>
-          )}
 
-          {/* Coming Soon Section */}
-          <div className="text-center mb-12 mt-20">
-            <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-              Coming Soon
-            </h2>
-            <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Next generation AI agents on the horizon
-            </p>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+              {filteredAgents.map((agent, index) => (
+                <Card 
+                  key={agent.id} 
+                  className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 animate-fade-in ${
+                    isDarkMode 
+                      ? 'bg-white/10 backdrop-blur-sm text-white border-white/20' 
+                      : 'bg-white/80 backdrop-blur-sm text-gray-800'
+                  }`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <CardHeader className="text-center pb-4">
+                    <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                      <img 
+                        src={agent.logo} 
+                        alt={`${agent.name} logo`}
+                        className="w-12 h-12 object-contain"
+                        onError={(e) => {
+                          const target = e.currentTarget as HTMLImageElement;
+                          target.style.display = 'none';
+                          const nextSibling = target.nextElementSibling as HTMLDivElement;
+                          if (nextSibling) {
+                            nextSibling.style.display = 'block';
+                          }
+                        }}
+                      />
+                      <div className="text-4xl hidden">{agent.name.charAt(0)}</div>
+                    </div>
+                    <CardTitle className={`text-xl font-bold group-hover:text-blue-400 transition-colors ${
+                      isDarkMode ? 'text-white' : 'text-gray-800'
+                    }`}>
+                      {agent.name}
+                    </CardTitle>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <div className="flex items-center">
+                        <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                        <span className="text-sm font-medium ml-1">{agent.rating}</span>
+                      </div>
+                      <span className="text-sm text-gray-500">•</span>
+                      <span className="text-sm font-medium text-green-400">{agent.pricing}</span>
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-1 mb-3">
+                      {agent.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className={`text-xs ${
+                          isDarkMode ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
+                        }`}>
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className={`text-center mb-4 leading-relaxed ${
+                      isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                    }`}>
+                      {agent.description}
+                    </CardDescription>
+                    
+                    <div className="space-y-2 mb-6">
+                      {agent.features.slice(0, 3).map((feature, idx) => (
+                        <div key={idx} className={`flex items-center text-sm ${
+                          isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                        }`}>
+                          <Zap className="h-3 w-3 text-blue-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {comingSoonAgents.map((agent, index) => (
-              <Card 
-                key={agent.name} 
-                className={`text-center hover:shadow-xl transition-all duration-300 border-dashed border-2 animate-fade-in ${
-                  isDarkMode 
-                    ? 'border-white/30 bg-white/10 backdrop-blur-sm text-white' 
-                    : 'border-gray-300 bg-white/50 backdrop-blur-sm text-gray-800'
-                }`}
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <CardHeader>
-                  <div className="text-3xl mb-3">🚀</div>
-                  <CardTitle className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
-                    {agent.name}
-                  </CardTitle>
-                  <Badge variant="outline" className={`mx-auto ${
-                    isDarkMode ? 'border-white/30 text-white' : 'border-gray-300 text-gray-600'
-                  }`}>
-                    {agent.expectedLaunch}
-                  </Badge>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
-                    {agent.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+                    <Button 
+                      asChild 
+                      className={`w-full transition-colors duration-300 ${
+                        isDarkMode 
+                          ? 'bg-white/20 text-white hover:bg-white/30 border border-white/30' 
+                          : 'bg-blue-600 text-white hover:bg-blue-700'
+                      }`}
+                      variant={isDarkMode ? "outline" : "default"}
+                    >
+                      <a href={agent.website} target="_blank" rel="noopener noreferrer">
+                        Visit Website
+                        <ExternalLink className="h-4 w-4 ml-2" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {filteredAgents.length === 0 && (
+              <div className="text-center py-16">
+                <div className="text-6xl mb-4">🔍</div>
+                <h3 className="text-2xl font-bold mb-2 text-white">
+                  No agents found
+                </h3>
+                <p className="text-white/70">
+                  Try adjusting your search or category filter
+                </p>
+              </div>
+            )}
+
+            {/* Coming Soon Section */}
+            <div className="text-center mb-12 mt-20">
+              <h2 className="text-4xl font-bold mb-4 text-white">
+                Coming Soon
+              </h2>
+              <p className="text-xl text-white/70">
+                Next generation AI agents on the horizon
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {comingSoonAgents.map((agent, index) => (
+                <Card 
+                  key={agent.name} 
+                  className="text-center hover:shadow-xl transition-all duration-300 border-dashed border-2 animate-fade-in border-white/30 bg-white/10 backdrop-blur-sm text-white"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <CardHeader>
+                    <div className="text-3xl mb-3">🚀</div>
+                    <CardTitle className="text-lg font-bold text-white">
+                      {agent.name}
+                    </CardTitle>
+                    <Badge variant="outline" className="mx-auto border-white/30 text-white">
+                      {agent.expectedLaunch}
+                    </Badge>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-white/70">
+                      {agent.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
-      </BeamsBackground>
+      </HeroGeometric>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
