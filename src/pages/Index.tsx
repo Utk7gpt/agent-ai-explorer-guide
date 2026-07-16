@@ -392,12 +392,13 @@ const Index = () => {
     }
   ];
 
-  const filteredAgents = aiAgents.filter(agent => {
+  const filteredAgents = allAgents.filter(agent => {
     const matchesSearch = agent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          agent.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "all" || agent.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
