@@ -240,39 +240,165 @@ const Index = () => {
     }
   ];
 
+  const newAgents = [
+    {
+      id: 17,
+      name: "Gemini 2.0",
+      category: "chat",
+      description: "Google's most advanced multimodal AI with native image, audio, and reasoning capabilities",
+      features: ["Multimodal reasoning", "Native tool use", "Long context", "Real-time streaming"],
+      rating: 4.7,
+      pricing: "Free + Advanced",
+      website: "https://gemini.google.com",
+      logo: "https://www.gstatic.com/lamda/images/gemini_favicon_f069958c85030456e93de685481c559f160ea06b.png",
+      tags: ["Google", "Multimodal"]
+    },
+    {
+      id: 18,
+      name: "Grok",
+      category: "chat",
+      description: "xAI's witty conversational AI with real-time knowledge from the X platform",
+      features: ["Real-time knowledge", "Humor & wit", "X integration", "Uncensored answers"],
+      rating: 4.4,
+      pricing: "X Premium+",
+      website: "https://x.ai",
+      logo: "https://x.ai/favicon.ico",
+      tags: ["xAI", "Real-time"]
+    },
+    {
+      id: 19,
+      name: "DeepSeek",
+      category: "chat",
+      description: "Open-source reasoning model rivaling top proprietary AIs at a fraction of the cost",
+      features: ["Advanced reasoning", "Open source", "Cost efficient", "Math & code"],
+      rating: 4.6,
+      pricing: "Free + API",
+      website: "https://deepseek.com",
+      logo: "https://chat.deepseek.com/favicon.svg",
+      tags: ["Open Source", "Reasoning"]
+    },
+    {
+      id: 20,
+      name: "Llama 3",
+      category: "chat",
+      description: "Meta's flagship open-weight LLM family for research and commercial use",
+      features: ["Open weights", "Self-hostable", "Multi-language", "Fine-tunable"],
+      rating: 4.5,
+      pricing: "Free",
+      website: "https://llama.meta.com",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+      tags: ["Meta", "Open Weight"]
+    },
+    {
+      id: 21,
+      name: "Lovable",
+      category: "coding",
+      description: "AI that builds full-stack web apps from natural language prompts in seconds",
+      features: ["Full-stack apps", "Instant preview", "Supabase built-in", "One-click deploy"],
+      rating: 4.8,
+      pricing: "Free + Pro",
+      website: "https://lovable.dev",
+      logo: "https://lovable.dev/favicon.ico",
+      tags: ["No-Code", "Full-Stack"]
+    },
+    {
+      id: 22,
+      name: "v0",
+      category: "coding",
+      description: "Vercel's generative UI tool that turns prompts into production React components",
+      features: ["React components", "shadcn/ui", "Copy-paste code", "Design to code"],
+      rating: 4.6,
+      pricing: "Free + Premium",
+      website: "https://v0.dev",
+      logo: "https://v0.dev/assets/icon.png",
+      tags: ["Vercel", "UI Gen"]
+    },
+    {
+      id: 23,
+      name: "Suno",
+      category: "creative",
+      description: "Generate full studio-quality songs with vocals, lyrics, and instruments from a prompt",
+      features: ["Full song generation", "Custom lyrics", "Vocal styles", "Genre variety"],
+      rating: 4.7,
+      pricing: "Free + Pro",
+      website: "https://suno.com",
+      logo: "https://suno.com/favicon.ico",
+      tags: ["Music", "Audio"]
+    },
+    {
+      id: 24,
+      name: "ElevenLabs",
+      category: "creative",
+      description: "Ultra-realistic AI voice generation, cloning, and dubbing across 30+ languages",
+      features: ["Voice cloning", "Text to speech", "AI dubbing", "Voice library"],
+      rating: 4.8,
+      pricing: "Free + Paid",
+      website: "https://elevenlabs.io",
+      logo: "https://elevenlabs.io/favicon.ico",
+      tags: ["Voice", "TTS"]
+    },
+    {
+      id: 25,
+      name: "NotebookLM",
+      category: "business",
+      description: "Google's AI research assistant that turns your sources into notes, summaries, and podcasts",
+      features: ["Source-grounded", "Audio overviews", "Study guides", "Mind maps"],
+      rating: 4.6,
+      pricing: "Free",
+      website: "https://notebooklm.google.com",
+      logo: "https://www.gstatic.com/notebooklm/branding/favicon.png",
+      tags: ["Google", "Research"]
+    },
+    {
+      id: 26,
+      name: "Manus",
+      category: "business",
+      description: "Autonomous general AI agent that plans and executes complex multi-step tasks for you",
+      features: ["Autonomous tasks", "Web browsing", "Code execution", "Long-horizon planning"],
+      rating: 4.3,
+      pricing: "Invite + Paid",
+      website: "https://manus.im",
+      logo: "https://manus.im/favicon.ico",
+      tags: ["Agent", "Autonomous"]
+    }
+  ];
+
+  const allAgents = [...aiAgents, ...newAgents];
+
   const comingSoonAgents = [
     {
       name: "GPT-5",
-      description: "Next generation of OpenAI's language model with enhanced capabilities",
-      expectedLaunch: "2024",
+      description: "OpenAI's next flagship model unifying reasoning, multimodality, and agentic tool use",
+      expectedLaunch: "2026",
       category: "chat"
     },
     {
-      name: "Sora",
-      description: "OpenAI's revolutionary video generation AI creating realistic videos from text",
-      expectedLaunch: "2024",
+      name: "Sora 2",
+      description: "Next-gen text-to-video model with longer clips, sharper physics, and native audio",
+      expectedLaunch: "2026",
       category: "creative"
     },
     {
-      name: "Gemini Ultra",
-      description: "Google's most capable AI model for complex reasoning and multimodal tasks",
-      expectedLaunch: "2024",
+      name: "Gemini 3",
+      description: "Google DeepMind's upcoming model with deeper reasoning and agentic capabilities",
+      expectedLaunch: "2026",
       category: "chat"
     },
     {
-      name: "Claude 3.5",
-      description: "Enhanced version of Anthropic's AI with improved reasoning and safety",
-      expectedLaunch: "2024",
+      name: "Claude 4 Opus",
+      description: "Anthropic's next frontier model targeting expert-level coding and research agents",
+      expectedLaunch: "2026",
       category: "chat"
     }
   ];
 
-  const filteredAgents = aiAgents.filter(agent => {
+  const filteredAgents = allAgents.filter(agent => {
     const matchesSearch = agent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          agent.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "all" || agent.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
