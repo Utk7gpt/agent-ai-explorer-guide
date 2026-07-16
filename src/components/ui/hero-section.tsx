@@ -32,12 +32,13 @@ const Box = ({ position, rotation }: { position: [number, number, number], rotat
             position={position}
             rotation={rotation}
         >
+            {/* @ts-expect-error r3f JSX intrinsic typings mismatch */}
             <meshPhysicalMaterial
-                attach="material"
-                color={"#232323" as any}
+                color="#232323"
                 metalness={1}
                 roughness={0.3}
             />
+
 
         </mesh>
     );
