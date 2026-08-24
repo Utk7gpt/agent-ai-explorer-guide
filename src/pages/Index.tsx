@@ -1180,6 +1180,23 @@ const Index = () => {
                         <ExternalLink className="h-4 w-4 ml-2" />
                       </a>
                     </Button>
+
+                    <label
+                      htmlFor={`compare-${agent.id}`}
+                      className={`mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors ${
+                        isDarkMode
+                          ? 'border-white/20 text-white hover:bg-white/10'
+                          : 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      <Checkbox
+                        id={`compare-${agent.id}`}
+                        checked={compareIds.includes(agent.id)}
+                        onCheckedChange={() => toggleCompare(agent.id)}
+                        aria-label={`Add ${agent.name} to comparison`}
+                      />
+                      {compareIds.includes(agent.id) ? 'Selected for comparison' : 'Add to compare'}
+                    </label>
                   </CardContent>
                 </Card>
               ))}
