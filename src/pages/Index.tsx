@@ -977,6 +977,21 @@ const Index = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const compareAgents = compareIds
+    .map((id) => allAgents.find((agent) => agent.id === id))
+    .filter((agent): agent is (typeof allAgents)[number] => Boolean(agent));
+
+  const toggleCompare = (id: number) => {
+    setCompareIds((prev) => {
+      if (prev.includes(id)) return prev.filter((existing) => existing !== id);
+      if (prev.length >= MAX_COMPARE) {
+        toast.error(`You can compare up to ${MAX_COMPARE} agents at a time.`);
+        return prev;
+      }
+      return [...prev, id];
+    });
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
