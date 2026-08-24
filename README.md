@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: [https://lovable.dev/projects/abc2d1f7-71a9-4b46-80c9-e52c8a5f12b5](https://agent-ai-explorer-guide.lovable.app)
+**URL**(https://agentverse1.lovable.app)
 
 ## How can I edit this code?
 
