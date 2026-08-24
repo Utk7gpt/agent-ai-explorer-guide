@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers, Moon, Sun } from "lucide-react";
+import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers, Moon, Sun, BookOpen, Workflow, Mic, Video, Palette, Megaphone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +20,13 @@ const Index = () => {
     { id: "creative", name: "Creative", icon: Image },
     { id: "coding", name: "Coding", icon: Code },
     { id: "business", name: "Business", icon: Users },
+    { id: "research", name: "Research", icon: BookOpen },
+    { id: "automation", name: "Automation", icon: Workflow },
+    { id: "voice", name: "Voice", icon: Mic },
+    { id: "video", name: "Video", icon: Video },
+    { id: "design", name: "Design", icon: Palette },
+    { id: "marketing", name: "Marketing", icon: Megaphone },
+    { id: "productivity", name: "Productivity", icon: Calendar },
   ];
 
   const features = [
@@ -655,7 +662,7 @@ const Index = () => {
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Submit Agent</a>
           </div>
           <p className="text-gray-500 text-sm mt-6">
-            © 2024 AI Agent Hub. Connecting you with the future of AI.
+            © 2026 AI Agent Hub. Connecting you with the future of AI.
           </p>
         </div>
       </footer>
