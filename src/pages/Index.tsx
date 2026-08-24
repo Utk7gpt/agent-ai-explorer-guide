@@ -8,11 +8,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Scene } from "@/components/ui/hero-section";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import { CompareBar, ComparisonDialog } from "@/components/comparison-view";
+import { Checkbox } from "@/components/ui/checkbox";
+import { toast } from "sonner";
+
+const MAX_COMPARE = 4;
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [compareIds, setCompareIds] = useState<number[]>([]);
+  const [isCompareOpen, setIsCompareOpen] = useState(false);
 
   const categories = [
     { id: "all", name: "All Agents", icon: Brain },
