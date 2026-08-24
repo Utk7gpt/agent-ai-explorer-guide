@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers, Moon, Sun, BookOpen, Workflow, Mic, Video, Palette, Megaphone, Calendar } from "lucide-react";
+import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers, Moon, Sun, BookOpen, Workflow, Mic, Video, Palette, Megaphone, Calendar, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +21,7 @@ const Index = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [compareIds, setCompareIds] = useState<number[]>([]);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const categories = [
     { id: "all", name: "All Agents", icon: Brain },
@@ -1013,18 +1014,75 @@ const Index = () => {
               </span>
             </a>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#featured" className="text-sm text-white/70 hover:text-white transition-colors">
+              <a href="#agents" className="text-sm text-white/70 hover:text-white transition-colors">
                 Agents
               </a>
               <a href="#coming-soon" className="text-sm text-white/70 hover:text-white transition-colors">
                 Coming Soon
               </a>
-              <a href="#compare" className="text-sm text-white/70 hover:text-white transition-colors">
+              <a
+                href="#compare"
+                onClick={(e) => {
+                  if (compareIds.length === 0) {
+                    e.preventDefault();
+                    document.getElementById('agents')?.scrollIntoView({ behavior: 'smooth' });
+                    toast('Select agents to compare', {
+                      description: 'Choose up to 4 agents from the grid below.',
+                    });
+                  }
+                }}
+                className="text-sm text-white/70 hover:text-white transition-colors"
+              >
+                Compare
+              </a>
+            </nav>
+            <button
+              type="button"
+              className="md:hidden p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10"
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-white/10 bg-black/40 backdrop-blur-xl">
+            <nav className="flex flex-col px-4 py-3 gap-2">
+              <a
+                href="#agents"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg px-3 py-2 transition-colors"
+              >
+                Agents
+              </a>
+              <a
+                href="#coming-soon"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg px-3 py-2 transition-colors"
+              >
+                Coming Soon
+              </a>
+              <a
+                href="#compare"
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (compareIds.length === 0) {
+                    e.preventDefault();
+                    document.getElementById('agents')?.scrollIntoView({ behavior: 'smooth' });
+                    toast('Select agents to compare', {
+                      description: 'Choose up to 4 agents from the grid below.',
+                    });
+                  }
+                }}
+                className="text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg px-3 py-2 transition-colors"
+              >
                 Compare
               </a>
             </nav>
           </div>
-        </div>
+        )}
       </header>
 
       {/* New 3D Hero Section */}
@@ -1107,7 +1165,7 @@ const Index = () => {
         title1="Discover the most"
         title2="powerful AI tools"
       >
-        <div className="py-16 px-4 w-full">
+        <div id="agents" className="py-16 px-4 w-full scroll-mt-20">
           <div className="max-w-7xl mx-auto">
             {/* Featured AI Agents Section */}
             <div className="text-center mb-12">
