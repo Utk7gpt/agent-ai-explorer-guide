@@ -11,6 +11,7 @@ import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 import { CompareBar, ComparisonDialog } from "@/components/comparison-view";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+import agentverseLogo from "@/assets/agentverse-logo.png";
 
 const MAX_COMPARE = 4;
 
