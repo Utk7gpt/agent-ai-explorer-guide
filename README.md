@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# Agentverse
 
-## Project info
+A modern, accessible web platform for discovering and comparing AI agents. Agentverse helps users find the right AI tools for their needs across categories like chat, coding, design, voice, video, automation, research, and more.
 
-**URL**(https://agentverse1.lovable.app)
+**Live site:** [https://agentverse1.lovable.app](https://agentverse1.lovable.app)
 
-## How can I edit this code?
+![Agentverse OG](./public/og-image.jpg)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **AI Agent Directory** — Browse 60+ agents across categories such as Conversational, Coding, Creative, Business, Research, Automation, Voice, Video, and Design.
+- **Side-by-Side Comparison** — Select up to 4 agents and compare their ratings, pricing, categories, tags, and key capabilities in a modal table.
+- **Real Brand Logos** — Agent logos are pulled from each agent's domain with automatic fallback to a generated lettermark.
+- **Dark / Light Mode** — Toggle between themes with a smooth animated background that adapts to both.
+- **3D Hero Section** — An interactive React Three Fiber scene with animated metallic boxes.
+- **Accessible UI** — Semantic HTML, ARIA labels, keyboard navigation, and responsive design.
+- **Coming Soon Section** — Preview upcoming agents and models.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/abc2d1f7-71a9-4b46-80c9-e52c8a5f12b5) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- [Vite](https://vitejs.dev/) — Fast build tooling
+- [React](https://react.dev/) — UI library
+- [TypeScript](https://www.typescriptlang.org/) — Type-safe development
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first styling
+- [shadcn/ui](https://ui.shadcn.com/) — Accessible UI components
+- [React Three Fiber](https://docs.pmndrs.io/react-three-fiber/) — 3D hero scene
+- [Framer Motion](https://www.framer.com/motion/) — Animations and transitions
+- [tsParticles](https://particles.js.org/) — Particle footer background
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+
+- npm or bun
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate into the project
+cd agentverse
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The dev server runs at `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+agentverse/
+├── public/                 # Static assets (favicon, OG image, robots)
+├── src/
+│   ├── assets/             # Logo and generated images
+│   ├── components/         # Reusable React components
+│   │   ├── agent-logo.tsx      # Dynamic agent logo loader
+│   │   ├── comparison-view.tsx # Compare bar and dialog
+│   │   └── ui/                 # shadcn/ui and custom UI components
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility functions
+│   ├── pages/              # Route-level pages
+│   ├── App.tsx             # Main app component
+│   ├── index.css           # Tailwind and design tokens
+│   └── main.tsx            # Entry point
+├── index.html
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── vite.config.ts
+```
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is built with Lovable. To publish or connect a custom domain:
 
-## How can I deploy this project?
+1. Open the project in [Lovable](https://lovable.dev/projects/abc2d1f7-71a9-4b46-80c9-e52c8a5f12b5).
+2. Click **Share → Publish** to deploy.
+3. For a custom domain, go to **Project → Settings → Domains**.
 
-Simply open [Lovable](https://lovable.dev/projects/abc2d1f7-71a9-4b46-80c9-e52c8a5f12b5) and click on Share -> Publish.
+Read more in the [Lovable docs](https://docs.lovable.dev/).
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT
