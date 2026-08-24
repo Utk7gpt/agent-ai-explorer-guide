@@ -8,11 +8,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { Scene } from "@/components/ui/hero-section";
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import { CompareBar, ComparisonDialog } from "@/components/comparison-view";
+import { Checkbox } from "@/components/ui/checkbox";
+import { toast } from "sonner";
+
+const MAX_COMPARE = 4;
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [compareIds, setCompareIds] = useState<number[]>([]);
+  const [isCompareOpen, setIsCompareOpen] = useState(false);
 
   const categories = [
     { id: "all", name: "All Agents", icon: Brain },
@@ -970,6 +977,21 @@ const Index = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const compareAgents = compareIds
+    .map((id) => allAgents.find((agent) => agent.id === id))
+    .filter((agent): agent is (typeof allAgents)[number] => Boolean(agent));
+
+  const toggleCompare = (id: number) => {
+    setCompareIds((prev) => {
+      if (prev.includes(id)) return prev.filter((existing) => existing !== id);
+      if (prev.length >= MAX_COMPARE) {
+        toast.error(`You can compare up to ${MAX_COMPARE} agents at a time.`);
+        return prev;
+      }
+      return [...prev, id];
+    });
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
@@ -1158,6 +1180,23 @@ const Index = () => {
                         <ExternalLink className="h-4 w-4 ml-2" />
                       </a>
                     </Button>
+
+                    <label
+                      htmlFor={`compare-${agent.id}`}
+                      className={`mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors ${
+                        isDarkMode
+                          ? 'border-white/20 text-white hover:bg-white/10'
+                          : 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      <Checkbox
+                        id={`compare-${agent.id}`}
+                        checked={compareIds.includes(agent.id)}
+                        onCheckedChange={() => toggleCompare(agent.id)}
+                        aria-label={`Add ${agent.name} to comparison`}
+                      />
+                      {compareIds.includes(agent.id) ? 'Selected for comparison' : 'Add to compare'}
+                    </label>
                   </CardContent>
                 </Card>
               ))}
@@ -1230,6 +1269,21 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      <CompareBar
+        agents={compareAgents}
+        max={MAX_COMPARE}
+        onRemove={(id) => setCompareIds((prev) => prev.filter((existing) => existing !== id))}
+        onClear={() => setCompareIds([])}
+        onOpen={() => setIsCompareOpen(true)}
+      />
+
+      <ComparisonDialog
+        agents={compareAgents}
+        open={isCompareOpen}
+        onOpenChange={setIsCompareOpen}
+        onRemove={(id) => setCompareIds((prev) => prev.filter((existing) => existing !== id))}
+      />
     </div>
   );
 };
