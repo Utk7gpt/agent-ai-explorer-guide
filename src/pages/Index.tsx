@@ -1255,7 +1255,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4">AI Agent Hub</h3>
+          <h3 className="text-2xl font-bold mb-4">Agentverse</h3>
           <p className="text-gray-400 mb-6">
             Your gateway to discovering the most powerful AI tools and agents
           </p>
@@ -1265,7 +1265,7 @@ const Index = () => {
             <a href="#" className="text-gray-400 hover:text-white transition-colors">Submit Agent</a>
           </div>
           <p className="text-gray-500 text-sm mt-6">
-            © 2026 AI Agent Hub. Connecting you with the future of AI.
+            © 2026 Agentverse. Connecting you with the future of AI.
           </p>
         </div>
       </footer>
