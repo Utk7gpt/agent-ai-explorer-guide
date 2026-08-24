@@ -1013,13 +1013,25 @@ const Index = () => {
               </span>
             </a>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#featured" className="text-sm text-white/70 hover:text-white transition-colors">
+              <a href="#agents" className="text-sm text-white/70 hover:text-white transition-colors">
                 Agents
               </a>
               <a href="#coming-soon" className="text-sm text-white/70 hover:text-white transition-colors">
                 Coming Soon
               </a>
-              <a href="#compare" className="text-sm text-white/70 hover:text-white transition-colors">
+              <a
+                href="#compare"
+                onClick={(e) => {
+                  if (compareIds.length === 0) {
+                    e.preventDefault();
+                    document.getElementById('agents')?.scrollIntoView({ behavior: 'smooth' });
+                    toast('Select agents to compare', {
+                      description: 'Choose up to 4 agents from the grid below.',
+                    });
+                  }
+                }}
+                className="text-sm text-white/70 hover:text-white transition-colors"
+              >
                 Compare
               </a>
             </nav>
@@ -1107,7 +1119,7 @@ const Index = () => {
         title1="Discover the most"
         title2="powerful AI tools"
       >
-        <div className="py-16 px-4 w-full">
+        <div id="agents" className="py-16 px-4 w-full scroll-mt-20">
           <div className="max-w-7xl mx-auto">
             {/* Featured AI Agents Section */}
             <div className="text-center mb-12">
