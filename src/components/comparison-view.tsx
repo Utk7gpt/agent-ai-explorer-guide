@@ -45,14 +45,12 @@ export const CompareBar = ({ agents, onRemove, onClear, onOpen, max }: CompareBa
           {agents.map((agent) => (
             <li key={agent.id}>
               <span className="flex items-center gap-2 rounded-full border border-white/20 bg-white/10 py-1 pl-2 pr-1 text-sm text-white">
-                <img
-                  src={agent.logo}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-5 w-5 rounded object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.visibility = "hidden";
-                  }}
+                <AgentLogo
+                  name={agent.name}
+                  website={agent.website}
+                  logo={agent.logo}
+                  className="h-5 w-5 rounded"
+                  size={64}
                 />
                 {agent.name}
                 <button
