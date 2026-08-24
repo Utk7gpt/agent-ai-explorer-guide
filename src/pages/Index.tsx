@@ -12,6 +12,7 @@ import { CompareBar, ComparisonDialog } from "@/components/comparison-view";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import agentverseLogo from "@/assets/agentverse-logo.png";
+import { AgentLogo } from "@/components/agent-logo";
 
 const MAX_COMPARE = 4;
 
