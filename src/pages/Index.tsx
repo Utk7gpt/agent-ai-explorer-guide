@@ -1247,7 +1247,7 @@ const Index = () => {
             )}
 
             {/* Coming Soon Section */}
-            <div className="text-center mb-12 mt-20">
+            <div id="coming-soon" className="text-center mb-12 mt-20">
               <h2 className="text-4xl font-bold mb-4 text-white">
                 Coming Soon
               </h2>
