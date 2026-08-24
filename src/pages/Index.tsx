@@ -12,6 +12,7 @@ import { CompareBar, ComparisonDialog } from "@/components/comparison-view";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import agentverseLogo from "@/assets/agentverse-logo.png";
+import { AgentLogo } from "@/components/agent-logo";
 
 const MAX_COMPARE = 4;
 
@@ -1200,20 +1201,12 @@ const Index = () => {
                 >
                   <CardHeader className="text-center pb-4">
                     <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                      <img 
-                        src={agent.logo} 
-                        alt={`${agent.name} logo`}
-                        className="w-12 h-12 object-contain"
-                        onError={(e) => {
-                          const target = e.currentTarget as HTMLImageElement;
-                          target.style.display = 'none';
-                          const nextSibling = target.nextElementSibling as HTMLDivElement;
-                          if (nextSibling) {
-                            nextSibling.style.display = 'block';
-                          }
-                        }}
+                      <AgentLogo
+                        name={agent.name}
+                        website={agent.website}
+                        logo={agent.logo}
+                        className="w-12 h-12"
                       />
-                      <div className="text-4xl hidden">{agent.name.charAt(0)}</div>
                     </div>
                     <CardTitle className={`text-xl font-bold group-hover:text-blue-400 transition-colors ${
                       isDarkMode ? 'text-white' : 'text-gray-800'
