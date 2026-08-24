@@ -1255,7 +1255,10 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-bold mb-4">Agentverse</h3>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <img src={agentverseLogo} alt="Agentverse logo" loading="lazy" width={40} height={40} className="h-10 w-10" />
+            <h3 className="text-2xl font-bold">Agentverse</h3>
+          </div>
           <p className="text-gray-400 mb-6">
             Your gateway to discovering the most powerful AI tools and agents
           </p>
