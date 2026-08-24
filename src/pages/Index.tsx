@@ -1269,6 +1269,21 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      <CompareBar
+        agents={compareAgents}
+        max={MAX_COMPARE}
+        onRemove={(id) => setCompareIds((prev) => prev.filter((existing) => existing !== id))}
+        onClear={() => setCompareIds([])}
+        onOpen={() => setIsCompareOpen(true)}
+      />
+
+      <ComparisonDialog
+        agents={compareAgents}
+        open={isCompareOpen}
+        onOpenChange={setIsCompareOpen}
+        onRemove={(id) => setCompareIds((prev) => prev.filter((existing) => existing !== id))}
+      />
     </div>
   );
 };
