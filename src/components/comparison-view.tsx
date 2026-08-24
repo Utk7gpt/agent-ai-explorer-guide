@@ -35,6 +35,7 @@ export const CompareBar = ({ agents, onRemove, onClear, onOpen, max }: CompareBa
 
   return (
     <div
+      id="compare"
       role="region"
       aria-label="Agent comparison tray"
       className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/15 bg-slate-950/90 backdrop-blur-md px-4 py-3"

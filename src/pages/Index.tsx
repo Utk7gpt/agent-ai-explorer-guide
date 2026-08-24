@@ -996,8 +996,39 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      {/* Site Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/20 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <a href="/" className="flex items-center gap-3 group">
+              <img
+                src={agentverseLogo}
+                alt="Agentverse logo"
+                className="h-8 w-8 transition-transform duration-300 group-hover:scale-110"
+                width={32}
+                height={32}
+              />
+              <span className="text-xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                Agentverse
+              </span>
+            </a>
+            <nav className="hidden md:flex items-center gap-8">
+              <a href="#featured" className="text-sm text-white/70 hover:text-white transition-colors">
+                Agents
+              </a>
+              <a href="#coming-soon" className="text-sm text-white/70 hover:text-white transition-colors">
+                Coming Soon
+              </a>
+              <a href="#compare" className="text-sm text-white/70 hover:text-white transition-colors">
+                Compare
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
       {/* New 3D Hero Section */}
-      <section className="min-h-screen w-full bg-gradient-to-br from-black to-[#1A2428] text-white flex flex-col items-center justify-center p-8 relative overflow-hidden">
+      <section id="featured" className="min-h-screen w-full bg-gradient-to-br from-black to-[#1A2428] text-white flex flex-col items-center justify-center p-8 relative overflow-hidden pt-16">
         <div className="w-full max-w-6xl space-y-12 relative z-10">
           <div className="flex flex-col items-center text-center space-y-8">
             <Badge variant="secondary" className="backdrop-blur-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 px-4 py-2 rounded-full">
@@ -1216,7 +1247,7 @@ const Index = () => {
             )}
 
             {/* Coming Soon Section */}
-            <div className="text-center mb-12 mt-20">
+            <div id="coming-soon" className="text-center mb-12 mt-20">
               <h2 className="text-4xl font-bold mb-4 text-white">
                 Coming Soon
               </h2>
