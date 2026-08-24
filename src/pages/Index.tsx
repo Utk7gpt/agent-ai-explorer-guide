@@ -335,7 +335,7 @@ const Index = () => {
     {
       id: 24,
       name: "ElevenLabs",
-      category: "creative",
+      category: "voice",
       description: "Ultra-realistic AI voice generation, cloning, and dubbing across 30+ languages",
       features: ["Voice cloning", "Text to speech", "AI dubbing", "Voice library"],
       rating: 4.8,
@@ -347,7 +347,7 @@ const Index = () => {
     {
       id: 25,
       name: "NotebookLM",
-      category: "business",
+      category: "research",
       description: "Google's AI research assistant that turns your sources into notes, summaries, and podcasts",
       features: ["Source-grounded", "Audio overviews", "Study guides", "Mind maps"],
       rating: 4.6,
@@ -359,7 +359,7 @@ const Index = () => {
     {
       id: 26,
       name: "Manus",
-      category: "business",
+      category: "automation",
       description: "Autonomous general AI agent that plans and executes complex multi-step tasks for you",
       features: ["Autonomous tasks", "Web browsing", "Code execution", "Long-horizon planning"],
       rating: 4.3,
@@ -367,6 +367,546 @@ const Index = () => {
       website: "https://manus.im",
       logo: "https://manus.im/favicon.ico",
       tags: ["Agent", "Autonomous"]
+    },
+    // Research & Knowledge
+    {
+      id: 27,
+      name: "Elicit",
+      category: "research",
+      description: "AI research assistant that finds, summarizes, and synthesizes academic papers",
+      features: ["Paper search", "Evidence synthesis", "Citation analysis", "Research summaries"],
+      rating: 4.5,
+      pricing: "Free + Premium",
+      website: "https://elicit.org",
+      logo: "https://elicit.org/favicon.ico",
+      tags: ["Academic", "Papers"]
+    },
+    {
+      id: 28,
+      name: "Consensus",
+      category: "research",
+      description: "Search engine for scientific insights, using AI to extract findings from peer-reviewed papers",
+      features: ["Scientific search", "Consensus meters", "Paper summaries", "Citation snapshots"],
+      rating: 4.6,
+      pricing: "Free + Pro",
+      website: "https://consensus.app",
+      logo: "https://consensus.app/favicon.ico",
+      tags: ["Science", "Search"]
+    },
+    {
+      id: 29,
+      name: "SciSpace",
+      category: "research",
+      description: "AI copilot for reading, understanding, and writing research papers faster",
+      features: ["PDF chat", "Citation generator", "Paraphraser", "Literature review"],
+      rating: 4.5,
+      pricing: "Free + Premium",
+      website: "https://typeset.io",
+      logo: "https://typeset.io/favicon.ico",
+      tags: ["Academic", "Writing"]
+    },
+    // Automation & Agents
+    {
+      id: 30,
+      name: "n8n",
+      category: "automation",
+      description: "Fair-code workflow automation platform with native AI agent nodes and self-hosting",
+      features: ["Visual workflows", "AI agent nodes", "Self-hostable", "400+ integrations"],
+      rating: 4.7,
+      pricing: "Free + Enterprise",
+      website: "https://n8n.io",
+      logo: "https://n8n.io/favicon.ico",
+      tags: ["Open Source", "Workflows"]
+    },
+    {
+      id: 31,
+      name: "Make",
+      category: "automation",
+      description: "Visual no-code platform for building complex automations and AI workflows",
+      features: ["Scenario builder", "API integrations", "Data mapping", "Scheduling"],
+      rating: 4.6,
+      pricing: "Free + Paid",
+      website: "https://www.make.com",
+      logo: "https://www.make.com/favicon.ico",
+      tags: ["No-Code", "Integrations"]
+    },
+    {
+      id: 32,
+      name: "Zapier AI",
+      category: "automation",
+      description: "Connect apps and automate workflows with natural language and AI-powered Zap building",
+      features: ["Natural language Zaps", "7,000+ apps", "AI actions", "Multi-step workflows"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://zapier.com/ai",
+      logo: "https://cdn.zapier.com/zapier/images/favicon.ico",
+      tags: ["Integrations", "Workflows"]
+    },
+    {
+      id: 33,
+      name: "Relevance AI",
+      category: "automation",
+      description: "Build and deploy AI agents for sales, support, and operations without code",
+      features: ["AI agent builder", "Multi-agent teams", "Tool use", "Knowledge bases"],
+      rating: 4.4,
+      pricing: "Free Trial + Paid",
+      website: "https://relevanceai.com",
+      logo: "https://relevanceai.com/favicon.ico",
+      tags: ["Agents", "No-Code"]
+    },
+    // Voice & Audio
+    {
+      id: 34,
+      name: "Play.ht",
+      category: "voice",
+      description: "Realistic AI voice generator and text-to-speech API for content creators",
+      features: ["800+ voices", "Voice cloning", "SSML support", "API access"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://play.ht",
+      logo: "https://play.ht/favicon.ico",
+      tags: ["TTS", "Voice Cloning"]
+    },
+    {
+      id: 35,
+      name: "Murf AI",
+      category: "voice",
+      description: "Studio-quality AI voiceovers for videos, presentations, and podcasts",
+      features: ["120+ voices", "Studio editor", "Pitch control", "Commercial rights"],
+      rating: 4.4,
+      pricing: "Free + Paid",
+      website: "https://murf.ai",
+      logo: "https://murf.ai/favicon.ico",
+      tags: ["Voiceover", "Studio"]
+    },
+    {
+      id: 36,
+      name: "Descript",
+      category: "voice",
+      description: "All-in-one audio and video editor powered by AI transcription and overdub",
+      features: ["Text-based editing", "Overdub voices", "Studio sound", "Subtitles"],
+      rating: 4.7,
+      pricing: "Free + Paid",
+      website: "https://www.descript.com",
+      logo: "https://www.descript.com/favicon.ico",
+      tags: ["Editing", "Transcription"]
+    },
+    // Video Generation
+    {
+      id: 37,
+      name: "HeyGen",
+      category: "video",
+      description: "Create AI avatars and talking-head videos for marketing, training, and sales",
+      features: ["AI avatars", "Multi-language lipsync", "Templates", "API"],
+      rating: 4.6,
+      pricing: "Free + Paid",
+      website: "https://www.heygen.com",
+      logo: "https://app.heygen.com/favicon.ico",
+      tags: ["Avatars", "Marketing"]
+    },
+    {
+      id: 38,
+      name: "Kling AI",
+      category: "video",
+      description: "High-quality text-to-video model known for realistic motion and physics",
+      features: ["Text-to-video", "Image-to-video", "Longer clips", "Camera motion"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://klingai.com",
+      logo: "https://klingai.com/favicon.ico",
+      tags: ["Text-to-Video", "Motion"]
+    },
+    {
+      id: 39,
+      name: "Pika Labs",
+      category: "video",
+      description: "Creative AI video generation with style controls and scene editing",
+      features: ["Pikaffects", "Style presets", "Image-to-video", "Expand canvas"],
+      rating: 4.4,
+      pricing: "Free + Paid",
+      website: "https://pika.art",
+      logo: "https://pika.art/favicon.ico",
+      tags: ["Creative", "Effects"]
+    },
+    {
+      id: 40,
+      name: "InVideo AI",
+      category: "video",
+      description: "Turn text prompts into publish-ready videos with AI-generated scripts and footage",
+      features: ["Text-to-video", "Stock footage", "Voiceover", "Branding"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://invideo.io",
+      logo: "https://invideo.io/favicon.ico",
+      tags: ["Marketing", "Content"]
+    },
+    // Design & Creative
+    {
+      id: 41,
+      name: "Figma AI",
+      category: "design",
+      description: "Native AI features inside Figma for design generation, renaming, and prototyping",
+      features: ["Auto layouts", "Asset search", "Visual search", "First-draft designs"],
+      rating: 4.6,
+      pricing: "Free + Paid",
+      website: "https://www.figma.com/ai",
+      logo: "https://static.figma.com/app/icon/1/favicon.ico",
+      tags: ["UI/UX", "Prototyping"]
+    },
+    {
+      id: 42,
+      name: "Canva Magic Studio",
+      category: "design",
+      description: "Suite of AI design tools for images, video, presentations, and documents",
+      features: ["Magic Design", "Text-to-image", "Magic Edit", "Brand Kit"],
+      rating: 4.5,
+      pricing: "Free + Pro",
+      website: "https://www.canva.com/magic",
+      logo: "https://www.canva.com/favicon.ico",
+      tags: ["Design", "Marketing"]
+    },
+    {
+      id: 43,
+      name: "Adobe Firefly",
+      category: "design",
+      description: "Generative AI for safe commercial use across images, vectors, and video",
+      features: ["Text-to-image", "Generative fill", "Vector recolor", "Content credentials"],
+      rating: 4.4,
+      pricing: "Free + Premium",
+      website: "https://www.adobe.com/products/firefly.html",
+      logo: "https://www.adobe.com/favicon.ico",
+      tags: ["Commercial Safe", "Creative"]
+    },
+    {
+      id: 44,
+      name: "Galileo AI",
+      category: "design",
+      description: "Generative UI design tool that creates editable high-fidelity interfaces from prompts",
+      features: ["Text-to-UI", "Figma export", "Design systems", "Rapid prototyping"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://www.galileo.ai",
+      logo: "https://www.galileo.ai/favicon.ico",
+      tags: ["UI Gen", "Prototyping"]
+    },
+    // Marketing & SEO
+    {
+      id: 45,
+      name: "Surfer SEO",
+      category: "marketing",
+      description: "AI-powered content optimization platform for data-driven SEO writing",
+      features: ["Content editor", "SERP analysis", "Keyword research", "Audit"],
+      rating: 4.6,
+      pricing: "Paid",
+      website: "https://surferseo.com",
+      logo: "https://surferseo.com/favicon.ico",
+      tags: ["SEO", "Content"]
+    },
+    {
+      id: 46,
+      name: "Semrush AI",
+      category: "marketing",
+      description: "Marketing intelligence platform with AI writing, SEO, and competitive analysis tools",
+      features: ["Keyword tracking", "AI writing", "Competitor analysis", "Site audit"],
+      rating: 4.5,
+      pricing: "Free Trial + Paid",
+      website: "https://www.semrush.com",
+      logo: "https://www.semrush.com/favicon.ico",
+      tags: ["SEO", "Analytics"]
+    },
+    {
+      id: 47,
+      name: "HubSpot AI",
+      category: "marketing",
+      description: "AI features across CRM, marketing, sales, and customer service workflows",
+      features: ["Content assistant", "Predictive lead scoring", "Chatbot", "Email generation"],
+      rating: 4.4,
+      pricing: "Free + Paid",
+      website: "https://www.hubspot.com/ai",
+      logo: "https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inbound-Favicon.png",
+      tags: ["CRM", "Inbound"]
+    },
+    // Productivity & Meetings
+    {
+      id: 48,
+      name: "Otter.ai",
+      category: "productivity",
+      description: "AI meeting assistant that records, transcribes, and summarizes conversations",
+      features: ["Live transcription", "Meeting summaries", "Action items", "Collaboration"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://otter.ai",
+      logo: "https://otter.ai/favicon.ico",
+      tags: ["Meetings", "Transcription"]
+    },
+    {
+      id: 49,
+      name: "Fireflies.ai",
+      category: "productivity",
+      description: "Conversation intelligence platform that captures and analyzes voice meetings",
+      features: ["Auto record", "Search transcripts", "Topic tracking", "CRM sync"],
+      rating: 4.4,
+      pricing: "Free + Paid",
+      website: "https://fireflies.ai",
+      logo: "https://fireflies.ai/favicon.ico",
+      tags: ["Meetings", "CRM"]
+    },
+    {
+      id: 50,
+      name: "Gamma",
+      category: "productivity",
+      description: "AI-powered presentation and document builder for modern visual storytelling",
+      features: ["One-click themes", "AI writer", "Interactive decks", "Analytics"],
+      rating: 4.7,
+      pricing: "Free + Paid",
+      website: "https://gamma.app",
+      logo: "https://gamma.app/favicon.ico",
+      tags: ["Presentations", "Documents"]
+    },
+    {
+      id: 51,
+      name: "Tome",
+      category: "productivity",
+      description: "AI storytelling and presentation tool that generates narratives from prompts",
+      features: ["AI narrative", "Image generation", "Live embeds", "Analytics"],
+      rating: 4.3,
+      pricing: "Free + Paid",
+      website: "https://tome.app",
+      logo: "https://tome.app/favicon.ico",
+      tags: ["Storytelling", "Slides"]
+    },
+    {
+      id: 52,
+      name: "Beautiful.ai",
+      category: "productivity",
+      description: "Smart presentation software that auto-adjusts slide design as you add content",
+      features: ["Smart templates", "Auto design", "Team library", "Analytics"],
+      rating: 4.4,
+      pricing: "Free Trial + Paid",
+      website: "https://www.beautiful.ai",
+      logo: "https://www.beautiful.ai/favicon.ico",
+      tags: ["Slides", "Design"]
+    },
+    // Sales & Support
+    {
+      id: 53,
+      name: "Apollo.io",
+      category: "business",
+      description: "AI-powered sales intelligence and engagement platform for outbound teams",
+      features: ["B2B database", "Email sequencing", "Lead scoring", "CRM enrichment"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://apollo.io",
+      logo: "https://apollo.io/favicon.ico",
+      tags: ["Sales", "Outreach"]
+    },
+    {
+      id: 54,
+      name: "Clay",
+      category: "business",
+      description: "Data enrichment and outreach automation platform for modern go-to-market teams",
+      features: ["50+ data sources", "AI messaging", "Waterfall enrichment", "CRM sync"],
+      rating: 4.6,
+      pricing: "Free Trial + Paid",
+      website: "https://www.clay.com",
+      logo: "https://www.clay.com/favicon.ico",
+      tags: ["GTM", "Enrichment"]
+    },
+    {
+      id: 55,
+      name: "Intercom Fin",
+      category: "business",
+      description: "AI customer service agent that resolves support conversations automatically",
+      features: ["Instant answers", "Conversational AI", "Human handoff", "Multilingual"],
+      rating: 4.4,
+      pricing: "Paid",
+      website: "https://www.intercom.com/fin",
+      logo: "https://www.intercom.com/favicon.ico",
+      tags: ["Support", "Chatbot"]
+    },
+    // Developer Tools
+    {
+      id: 56,
+      name: "Replit Agent",
+      category: "coding",
+      description: "AI coding agent that builds, deploys, and manages apps directly inside Replit",
+      features: ["Natural language coding", "One-click deploy", "Live preview", "Team collaboration"],
+      rating: 4.5,
+      pricing: "Free + Core",
+      website: "https://replit.com/agent",
+      logo: "https://replit.com/favicon.ico",
+      tags: ["Agent", "Cloud IDE"]
+    },
+    {
+      id: 57,
+      name: "Bolt.new",
+      category: "coding",
+      description: "AI-powered full-stack web development in the browser with instant deployment",
+      features: ["Prompt-to-app", "StackBlitz editor", "Auto debugging", "Deploy"],
+      rating: 4.6,
+      pricing: "Free + Paid",
+      website: "https://bolt.new",
+      logo: "https://bolt.new/favicon.ico",
+      tags: ["Web Dev", "Agent"]
+    },
+    {
+      id: 58,
+      name: "Windsurf",
+      category: "coding",
+      description: "Agentic IDE by Codeium with deep codebase understanding and autonomous editing",
+      features: ["Cascade agent", "Inline edits", "Terminal commands", "Multi-file changes"],
+      rating: 4.6,
+      pricing: "Free + Pro",
+      website: "https://codeium.com/windsurf",
+      logo: "https://codeium.com/favicon.ico",
+      tags: ["IDE", "Agentic"]
+    },
+    {
+      id: 59,
+      name: "Devin",
+      category: "coding",
+      description: "Autonomous AI software engineer that plans, codes, tests, and deploys projects",
+      features: ["End-to-end coding", "Bug fixing", "PR creation", "CI/CD integration"],
+      rating: 4.2,
+      pricing: "Enterprise",
+      website: "https://www.cognition.ai",
+      logo: "https://www.cognition.ai/favicon.ico",
+      tags: ["Autonomous", "Engineer"]
+    },
+    // More Chat Models
+    {
+      id: 60,
+      name: "Mistral Le Chat",
+      category: "chat",
+      description: "Fast and capable European chatbot with document analysis and web search",
+      features: ["Fast inference", "Document upload", "Web search", "Multilingual"],
+      rating: 4.4,
+      pricing: "Free + Pro",
+      website: "https://chat.mistral.ai",
+      logo: "https://chat.mistral.ai/favicon.ico",
+      tags: ["Mistral", "European"]
+    },
+    {
+      id: 61,
+      name: "Qwen",
+      category: "chat",
+      description: "Alibaba's open-weight Qwen series with strong coding and reasoning abilities",
+      features: ["Open weights", "Multilingual", "Coding focus", "Long context"],
+      rating: 4.5,
+      pricing: "Free + API",
+      website: "https://chat.qwen.ai",
+      logo: "https://chat.qwen.ai/favicon.ico",
+      tags: ["Open Source", "Alibaba"]
+    },
+    {
+      id: 62,
+      name: "Pi",
+      category: "chat",
+      description: "Personal AI by Inflection designed for supportive, conversational interactions",
+      features: ["Conversational", "Personalized", "Voice chat", "Briefs"],
+      rating: 4.2,
+      pricing: "Free",
+      website: "https://pi.ai",
+      logo: "https://pi.ai/favicon.ico",
+      tags: ["Personal", "Inflection"]
+    },
+    // More Creative
+    {
+      id: 63,
+      name: "Leonardo.ai",
+      category: "creative",
+      description: "AI art and image generation platform with fine-tuned models and asset creation",
+      features: ["Custom models", "Image generation", "Texture creation", "Motion"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://leonardo.ai",
+      logo: "https://leonardo.ai/favicon.ico",
+      tags: ["Image Gen", "Art"]
+    },
+    {
+      id: 64,
+      name: "Ideogram",
+      category: "creative",
+      description: "Text-to-image model famous for accurate typography and coherent text in images",
+      features: ["Text in images", "Style presets", "Remix", "High resolution"],
+      rating: 4.6,
+      pricing: "Free + Paid",
+      website: "https://ideogram.ai",
+      logo: "https://ideogram.ai/favicon.ico",
+      tags: ["Typography", "Image Gen"]
+    },
+    {
+      id: 65,
+      name: "Udio",
+      category: "creative",
+      description: "AI music generation with expressive vocals, instrumentation, and genre control",
+      features: ["Vocal generation", "Style tags", "Lyrics input", "High fidelity"],
+      rating: 4.5,
+      pricing: "Free + Paid",
+      website: "https://www.udio.com",
+      logo: "https://www.udio.com/favicon.ico",
+      tags: ["Music", "Audio"]
+    },
+    // Vertical / Enterprise
+    {
+      id: 66,
+      name: "AlphaSense",
+      category: "business",
+      description: "Market intelligence and search platform for financial and corporate research",
+      features: ["Expert calls", "Document search", "AI summaries", "Market tracking"],
+      rating: 4.6,
+      pricing: "Enterprise",
+      website: "https://www.alpha-sense.com",
+      logo: "https://www.alpha-sense.com/favicon.ico",
+      tags: ["Finance", "Research"]
+    },
+    {
+      id: 67,
+      name: "Harvey",
+      category: "business",
+      description: "Generative AI platform built specifically for legal workflows and research",
+      features: ["Legal research", "Contract analysis", "Document drafting", "Compliance"],
+      rating: 4.5,
+      pricing: "Enterprise",
+      website: "https://www.harvey.ai",
+      logo: "https://www.harvey.ai/favicon.ico",
+      tags: ["Legal", "Enterprise"]
+    },
+    {
+      id: 68,
+      name: "Hippocratic AI",
+      category: "business",
+      description: "Safety-focused generative AI for non-diagnostic healthcare patient interactions",
+      features: ["Patient engagement", "Safety benchmarks", "Voice calls", "Workflows"],
+      rating: 4.4,
+      pricing: "Enterprise",
+      website: "https://www.hippocraticai.com",
+      logo: "https://www.hippocraticai.com/favicon.ico",
+      tags: ["Healthcare", "Safety"]
+    },
+    {
+      id: 69,
+      name: "Khanmigo",
+      category: "business",
+      description: "AI tutor and teaching assistant from Khan Academy for personalized learning",
+      features: ["Socratic tutoring", "Lesson planning", "Progress tracking", "Multilingual"],
+      rating: 4.5,
+      pricing: "Free + District",
+      website: "https://www.khanacademy.org/khan-labs/khanmigo",
+      logo: "https://www.khanacademy.org/favicon.ico",
+      tags: ["Education", "Tutor"]
+    },
+    {
+      id: 70,
+      name: "Darktrace",
+      category: "business",
+      description: "AI cybersecurity platform that detects and responds to threats in real time",
+      features: ["Threat detection", "Self-learning", "Autonomous response", "Email security"],
+      rating: 4.3,
+      pricing: "Enterprise",
+      website: "https://www.darktrace.com",
+      logo: "https://www.darktrace.com/favicon.ico",
+      tags: ["Cybersecurity", "Enterprise"]
     }
   ];
 
@@ -396,6 +936,30 @@ const Index = () => {
       description: "Anthropic's next frontier model targeting expert-level coding and research agents",
       expectedLaunch: "2026",
       category: "chat"
+    },
+    {
+      name: "Project Astra",
+      description: "Google's real-time multimodal AI assistant for phones, glasses, and IoT devices",
+      expectedLaunch: "2026",
+      category: "chat"
+    },
+    {
+      name: "OpenAI Operator",
+      description: "Autonomous browser agent that completes tasks by navigating the web for you",
+      expectedLaunch: "2026",
+      category: "automation"
+    },
+    {
+      name: "Devin 2",
+      description: "Next iteration of Cognition's autonomous AI software engineer with deeper reasoning",
+      expectedLaunch: "2026",
+      category: "coding"
+    },
+    {
+      name: "Apple Intelligence 2",
+      description: "On-device personal intelligence system with deeper Siri integration and app actions",
+      expectedLaunch: "2026",
+      category: "productivity"
     }
   ];
 
