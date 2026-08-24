@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { AgentLogo } from "@/components/agent-logo";
 
 export interface ComparableAgent {
   id: number;
