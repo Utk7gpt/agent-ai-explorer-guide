@@ -179,13 +179,11 @@ export const ComparisonDialog = ({ agents, open, onOpenChange, onRemove }: Compa
                 {agents.map((agent) => (
                   <th key={agent.id} scope="col" className="p-3 align-bottom">
                     <div className="flex flex-col items-start gap-2">
-                      <img
-                        src={agent.logo}
-                        alt={`${agent.name} logo`}
-                        className="h-10 w-10 object-contain"
-                        onError={(e) => {
-                          e.currentTarget.style.visibility = "hidden";
-                        }}
+                      <AgentLogo
+                        name={agent.name}
+                        website={agent.website}
+                        logo={agent.logo}
+                        className="h-10 w-10"
                       />
                       <span className="text-base font-bold">{agent.name}</span>
                       <button
