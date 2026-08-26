@@ -1146,7 +1146,7 @@ const Index = () => {
               <div
                 key={idx}
                 className={`surface-panel hover-glow border border-border/70 rounded-2xl p-5 md:p-6 flex flex-col justify-between items-start hover:border-primary/50 hover:-translate-y-1 ${
-                  idx === 0 ? "col-span-2 md:row-span-2" : ""
+                  idx === 0 ? "col-span-2 md:row-span-2" : idx === 1 ? "col-span-2" : ""
                 }`}
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary-glow">
