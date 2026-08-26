@@ -1178,35 +1178,35 @@ const Index = () => {
             {/* Featured AI Agents Section */}
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-4 mb-6">
-                <h2 className="text-4xl font-bold mb-4 text-white">
-                  Featured AI Agents
+                <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
+                  Featured <span className="text-gradient">AI Agents</span>
                 </h2>
-                <div className="flex items-center gap-2">
-                  <Sun className={`h-4 w-4 ${isDarkMode ? 'text-gray-400' : 'text-yellow-500'}`} />
+                <div className="flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1.5 backdrop-blur-md">
+                  <Sun className={`h-4 w-4 ${isDarkMode ? 'text-muted-foreground' : 'text-primary-glow'}`} />
                   <Switch
                     checked={isDarkMode}
                     onCheckedChange={setIsDarkMode}
                   />
-                  <Moon className={`h-4 w-4 ${isDarkMode ? 'text-blue-400' : 'text-gray-400'}`} />
+                  <Moon className={`h-4 w-4 ${isDarkMode ? 'text-primary-glow' : 'text-muted-foreground'}`} />
                 </div>
               </div>
-              <p className="text-xl text-white/70">
-                Explore the most powerful AI tools available today
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Explore the most powerful AI tools available today — filter by category, then compare up to four side by side.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-16">
               {filteredAgents.map((agent, index) => (
                 <Card 
                   key={agent.id} 
-                  className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 animate-fade-in ${
-                    isDarkMode 
-                      ? 'bg-white/10 backdrop-blur-sm text-white border-white/20' 
-                      : 'bg-white/80 backdrop-blur-sm text-gray-800'
-                  }`}
+                  className={`group relative overflow-hidden rounded-2xl border hover-glow animate-fade-in flex flex-col hover:-translate-y-1.5 ${
+                    isDarkMode
+                      ? 'surface-panel border-border/70 text-foreground hover:border-primary/50'
+                      : 'bg-panel border-panel/60 text-panel-foreground shadow-elegant'
+                  } ${index === 0 ? 'sm:col-span-2' : ''}`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CardHeader className="text-center pb-4">
+                  <CardHeader className="text-center pb-3">
                     <div className="mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
                       <AgentLogo
                         name={agent.name}
@@ -1215,23 +1215,23 @@ const Index = () => {
                         className="w-12 h-12"
                       />
                     </div>
-                    <CardTitle className={`text-xl font-bold group-hover:text-blue-400 transition-colors ${
-                      isDarkMode ? 'text-white' : 'text-gray-800'
+                    <CardTitle className={`font-display text-lg font-semibold transition-colors group-hover:text-primary-glow ${
+                      isDarkMode ? 'text-foreground' : 'text-panel-foreground'
                     }`}>
                       {agent.name}
                     </CardTitle>
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <div className="flex items-center">
-                        <Star className="h-4 w-4 text-yellow-400 fill-current" />
+                        <Star className="h-4 w-4 text-primary-glow fill-current" />
                         <span className="text-sm font-medium ml-1">{agent.rating}</span>
                       </div>
-                      <span className="text-sm text-gray-500">•</span>
-                      <span className="text-sm font-medium text-green-400">{agent.pricing}</span>
+                      <span className="text-sm text-muted-foreground">•</span>
+                      <span className="text-sm font-medium text-primary-glow">{agent.pricing}</span>
                     </div>
                     <div className="flex flex-wrap justify-center gap-1 mb-3">
                       {agent.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary" className={`text-xs ${
-                          isDarkMode ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-800'
+                        <Badge key={tag} variant="secondary" className={`text-[11px] rounded-full border ${
+                          isDarkMode ? 'bg-primary/10 border-primary/25 text-primary-glow' : 'bg-primary/10 border-primary/20 text-primary'
                         }`}>
                           {tag}
                         </Badge>
@@ -1239,8 +1239,8 @@ const Index = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className={`text-center mb-4 leading-relaxed ${
-                      isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                    <CardDescription className={`text-center mb-4 text-sm leading-relaxed ${
+                      isDarkMode ? 'text-muted-foreground' : 'text-panel-foreground/70'
                     }`}>
                       {agent.description}
                     </CardDescription>
@@ -1248,9 +1248,9 @@ const Index = () => {
                     <div className="space-y-2 mb-6">
                       {agent.features.slice(0, 3).map((feature, idx) => (
                         <div key={idx} className={`flex items-center text-sm ${
-                          isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                          isDarkMode ? 'text-muted-foreground' : 'text-panel-foreground/70'
                         }`}>
-                          <Zap className="h-3 w-3 text-blue-400 mr-2 flex-shrink-0" />
+                          <Zap className="h-3 w-3 text-primary-glow mr-2 flex-shrink-0" />
                           {feature}
                         </div>
                       ))}
@@ -1258,12 +1258,7 @@ const Index = () => {
 
                     <Button 
                       asChild 
-                      className={`w-full transition-colors duration-300 ${
-                        isDarkMode 
-                          ? 'bg-white/20 text-white hover:bg-white/30 border border-white/30' 
-                          : 'bg-blue-600 text-white hover:bg-blue-700'
-                      }`}
-                      variant={isDarkMode ? "outline" : "default"}
+                      className="w-full rounded-xl bg-gradient-primary text-primary-foreground border-0 hover:opacity-90 transition-opacity duration-300"
                     >
                       <a href={agent.website} target="_blank" rel="noopener noreferrer">
                         Visit Website
@@ -1273,10 +1268,10 @@ const Index = () => {
 
                     <label
                       htmlFor={`compare-${agent.id}`}
-                      className={`mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-md border px-3 py-2 text-sm transition-colors ${
+                      className={`mt-3 flex cursor-pointer items-center justify-center gap-2 rounded-xl border px-3 py-2 text-sm transition-colors ${
                         isDarkMode
-                          ? 'border-white/20 text-white hover:bg-white/10'
-                          : 'border-gray-300 text-gray-700 hover:bg-gray-100'
+                          ? 'border-border text-muted-foreground hover:text-foreground hover:bg-secondary'
+                          : 'border-primary/20 text-panel-foreground hover:bg-primary/10'
                       }`}
                     >
                       <Checkbox
@@ -1295,10 +1290,10 @@ const Index = () => {
             {filteredAgents.length === 0 && (
               <div className="text-center py-16">
                 <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-bold mb-2 text-white">
+                <h3 className="font-display text-2xl font-bold mb-2 text-foreground">
                   No agents found
                 </h3>
-                <p className="text-white/70">
+                <p className="text-muted-foreground">
                   Try adjusting your search or category filter
                 </p>
               </div>
@@ -1306,10 +1301,10 @@ const Index = () => {
 
             {/* Coming Soon Section */}
             <div id="coming-soon" className="text-center mb-12 mt-20">
-              <h2 className="text-4xl font-bold mb-4 text-white">
-                Coming Soon
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4 text-foreground">
+                Coming <span className="text-gradient">Soon</span>
               </h2>
-              <p className="text-xl text-white/70">
+              <p className="text-lg text-muted-foreground">
                 Next generation AI agents on the horizon
               </p>
             </div>
@@ -1318,20 +1313,20 @@ const Index = () => {
               {comingSoonAgents.map((agent, index) => (
                 <Card 
                   key={agent.name} 
-                  className="text-center hover:shadow-xl transition-all duration-300 border-dashed border-2 animate-fade-in border-white/30 bg-white/10 backdrop-blur-sm text-white"
+                  className="text-center rounded-2xl border-2 border-dashed border-primary/25 bg-card/40 backdrop-blur-md text-foreground animate-fade-in hover-glow hover:border-primary/50 transition-all duration-300"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <CardHeader>
-                    <div className="text-3xl mb-3">🚀</div>
-                    <CardTitle className="text-lg font-bold text-white">
+                    <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary-glow"><Rocket className="h-5 w-5" /></div>
+                    <CardTitle className="font-display text-lg font-semibold text-foreground">
                       {agent.name}
                     </CardTitle>
-                    <Badge variant="outline" className="mx-auto border-white/30 text-white">
+                    <Badge variant="outline" className="mx-auto rounded-full border-primary/30 text-primary-glow">
                       {agent.expectedLaunch}
                     </Badge>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-white/70">
+                    <CardDescription className="text-muted-foreground">
                       {agent.description}
                     </CardDescription>
                   </CardContent>
@@ -1343,21 +1338,21 @@ const Index = () => {
       </HeroGeometric>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
+      <footer className="relative border-t border-border/60 bg-background py-14 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <img src={agentverseLogo} alt="Agentverse logo" loading="lazy" width={40} height={40} className="h-10 w-10" />
-            <h3 className="text-2xl font-bold">Agentverse</h3>
+            <h3 className="font-display text-2xl font-bold text-gradient">Agentverse</h3>
           </div>
-          <p className="text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Your gateway to discovering the most powerful AI tools and agents
           </p>
           <div className="flex justify-center space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">About</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Submit Agent</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Submit Agent</a>
           </div>
-          <p className="text-gray-500 text-sm mt-6">
+          <p className="text-xs text-muted-foreground/70 mt-8">
             © 2026 Agentverse. Connecting you with the future of AI.
           </p>
         </div>
