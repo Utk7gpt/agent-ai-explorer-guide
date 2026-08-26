@@ -997,9 +997,9 @@ const Index = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Site Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/20 backdrop-blur-md border-b border-white/10">
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/70 backdrop-blur-xl border-b border-border/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <a href="/" className="flex items-center gap-3 group">
@@ -1010,15 +1010,15 @@ const Index = () => {
                 width={32}
                 height={32}
               />
-              <span className="text-xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              <span className="font-display text-xl font-bold tracking-tight text-gradient">
                 Agentverse
               </span>
             </a>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#agents" className="text-sm text-white/70 hover:text-white transition-colors">
+              <a href="#agents" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Agents
               </a>
-              <a href="#coming-soon" className="text-sm text-white/70 hover:text-white transition-colors">
+              <a href="#coming-soon" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Coming Soon
               </a>
               <a
@@ -1032,14 +1032,14 @@ const Index = () => {
                     });
                   }
                 }}
-                className="text-sm text-white/70 hover:text-white transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 Compare
               </a>
             </nav>
             <button
               type="button"
-              className="md:hidden p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10"
+              className="md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary"
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
               onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -1049,19 +1049,19 @@ const Index = () => {
           </div>
         </div>
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-white/10 bg-black/40 backdrop-blur-xl">
+          <div className="md:hidden border-t border-border/60 bg-background/90 backdrop-blur-xl">
             <nav className="flex flex-col px-4 py-3 gap-2">
               <a
                 href="#agents"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg px-3 py-2 transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg px-3 py-2 transition-colors"
               >
                 Agents
               </a>
               <a
                 href="#coming-soon"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg px-3 py-2 transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg px-3 py-2 transition-colors"
               >
                 Coming Soon
               </a>
@@ -1077,7 +1077,7 @@ const Index = () => {
                     });
                   }
                 }}
-                className="text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg px-3 py-2 transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg px-3 py-2 transition-colors"
               >
                 Compare
               </a>
@@ -1087,37 +1087,37 @@ const Index = () => {
       </header>
 
       {/* New 3D Hero Section */}
-      <section id="featured" className="min-h-screen w-full bg-gradient-to-br from-black to-[#1A2428] text-white flex flex-col items-center justify-center p-8 relative overflow-hidden pt-16">
-        <div className="w-full max-w-6xl space-y-12 relative z-10">
+      <section id="featured" className="w-full bg-background text-foreground flex flex-col items-center justify-center px-6 relative overflow-hidden pt-32 pb-24">
+        <div className="w-full max-w-6xl space-y-14 relative z-10">
           <div className="flex flex-col items-center text-center space-y-8">
-            <Badge variant="secondary" className="backdrop-blur-sm bg-white/10 border border-white/20 text-white hover:bg-white/20 px-4 py-2 rounded-full">
-              ✨ Next Generation AI Tools
+            <Badge variant="secondary" className="bg-primary/10 border border-primary/30 text-primary-glow hover:bg-primary/20 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.18em]">
+              Next generation AI directory
             </Badge>
             
             <div className="space-y-6 flex items-center justify-center flex-col">
-              <h1 className="text-3xl md:text-6xl font-semibold tracking-tight max-w-3xl">
-                Discover, compare, and choose the perfect AI agents
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight max-w-4xl leading-[1.05]">
+                Discover, compare, and choose the <span className="text-gradient">perfect AI agent</span>
               </h1>
-              <p className="text-lg text-neutral-300 max-w-2xl">
+              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
                 From creative tools to coding assistants, find your ideal AI companion. Experience ultra-fast processing, advanced security, and intuitive design.
               </p>
               
               {/* Search Bar */}
-              <div className="max-w-2xl mx-auto mb-8">
+              <div className="w-full max-w-2xl mx-auto mb-4">
                 <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5 pointer-events-none z-10" />
                   <Input
                     type="text"
                     placeholder="Search AI agents..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-12 pr-4 py-4 text-lg rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder:text-gray-400 focus:border-white/40 transition-all duration-300"
+                    className="h-14 pl-12 pr-4 text-base rounded-2xl border border-border bg-card/70 backdrop-blur-xl text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring shadow-elegant transition-all duration-300"
                   />
                 </div>
               </div>
 
               {/* Category Filter */}
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex flex-wrap justify-center gap-2.5">
                 {categories.map((category) => {
                   const IconComponent = category.icon;
                   return (
@@ -1125,10 +1125,11 @@ const Index = () => {
                       key={category.id}
                       variant={selectedCategory === category.id ? "default" : "outline"}
                       onClick={() => setSelectedCategory(category.id)}
-                      className={`rounded-full px-6 py-3 transition-all duration-300 hover:scale-105 ${
-                        selectedCategory === category.id 
-                          ? "bg-white text-black hover:bg-white/90" 
-                          : "bg-transparent text-white border-white/20 hover:bg-white/10"
+                      size="sm"
+                      className={`rounded-full px-4 h-10 text-sm transition-all duration-300 ${
+                        selectedCategory === category.id
+                          ? "bg-gradient-primary text-primary-foreground border-0 shadow-glow"
+                          : "bg-card/50 text-muted-foreground border border-border hover:text-foreground hover:border-primary/50 hover:bg-card"
                       }`}
                     >
                       <IconComponent className="h-4 w-4 mr-2" />
@@ -1140,15 +1141,21 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[10.5rem] gap-4 max-w-5xl mx-auto">
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-6 h-40 md:h-48 flex flex-col justify-start items-start space-y-2 md:space-y-3"
+                className={`surface-panel hover-glow border border-border/70 rounded-2xl p-5 md:p-6 flex flex-col justify-between items-start hover:border-primary/50 hover:-translate-y-1 ${
+                  idx === 0 ? "col-span-2 md:row-span-2" : ""
+                }`}
               >
-                <feature.icon size={18} className="text-white/80 md:w-5 md:h-5" />
-                <h3 className="text-sm md:text-base font-medium">{feature.title}</h3>
-                <p className="text-xs md:text-sm text-neutral-400">{feature.description}</p>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary-glow">
+                  <feature.icon size={20} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-display text-base md:text-lg font-semibold">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
