@@ -19,7 +19,26 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['"DM Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				display: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-surface': 'var(--gradient-surface)',
+				'gradient-halo': 'var(--gradient-halo)'
+			},
+			boxShadow: {
+				elegant: 'var(--shadow-elegant)',
+				glow: 'var(--shadow-glow)'
+			},
 			colors: {
+				'primary-glow': 'hsl(var(--primary-glow))',
+				panel: {
+					DEFAULT: 'hsl(var(--panel))',
+					foreground: 'hsl(var(--panel-foreground))'
+				},
+
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
