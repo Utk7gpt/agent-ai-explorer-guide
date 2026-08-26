@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers, Moon, Sun, BookOpen, Workflow, Mic, Video, Palette, Megaphone, Calendar, Menu, X } from "lucide-react";
+import { Search, Star, ExternalLink, Filter, Zap, Brain, MessageSquare, Image, Code, Users, Cpu, ShieldCheck, Layers, Moon, Sun, BookOpen, Workflow, Mic, Video, Palette, Megaphone, Calendar, Menu, X, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
